@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Paige Turner</title>
-    <link>https://paigeturnertg.github.io/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Paige Turner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://paigeturnertg.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Merry Hexmas, One and All!</title>
-      <link>https://paigeturnertg.github.io/posts/2025-12-25/</link>
+      <link>http://localhost:1313/posts/2025-12-25/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://paigeturnertg.github.io/posts/2025-12-25/</guid>
+      <guid>http://localhost:1313/posts/2025-12-25/</guid>
       
         <description>&lt;p&gt;One last Christmas present to unwrap!&lt;/p&gt;</description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Changes for Christmas</title>
-      <link>https://paigeturnertg.github.io/posts/2025-12-14/</link>
+      <link>http://localhost:1313/posts/2025-12-14/</link>
       <pubDate>Sun, 14 Dec 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://paigeturnertg.github.io/posts/2025-12-14/</guid>
+      <guid>http://localhost:1313/posts/2025-12-14/</guid>
       
         <description>&lt;p&gt;We interrupt your regularly-scheduled program for some holiday cheer&amp;hellip;&lt;/p&gt;</description>
       
@@ -31,10 +31,10 @@
     
     <item>
       <title>New Story - Tits for Tates</title>
-      <link>https://paigeturnertg.github.io/posts/2025-11-21/</link>
+      <link>http://localhost:1313/posts/2025-11-21/</link>
       <pubDate>Thu, 20 Nov 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://paigeturnertg.github.io/posts/2025-11-21/</guid>
+      <guid>http://localhost:1313/posts/2025-11-21/</guid>
       
         <description>&lt;p&gt;Coming very soon, a fun new story!&lt;/p&gt;</description>
       
@@ -42,10 +42,10 @@
     
     <item>
       <title>Halloween Story!</title>
-      <link>https://paigeturnertg.github.io/posts/2025-10-31/</link>
+      <link>http://localhost:1313/posts/2025-10-31/</link>
       <pubDate>Fri, 31 Oct 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://paigeturnertg.github.io/posts/2025-10-31/</guid>
+      <guid>http://localhost:1313/posts/2025-10-31/</guid>
       
         <description>&lt;p&gt;It&amp;rsquo;s my first Halloween since I started writing fiction, so of course I was going to try my hand at the classic costume-gone-wrong tale.&lt;/p&gt;</description>
       
@@ -53,10 +53,10 @@
     
     <item>
       <title>Time for a Site Relaunch Already?</title>
-      <link>https://paigeturnertg.github.io/posts/2025-10-29/</link>
+      <link>http://localhost:1313/posts/2025-10-29/</link>
       <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://paigeturnertg.github.io/posts/2025-10-29/</guid>
+      <guid>http://localhost:1313/posts/2025-10-29/</guid>
       
         <description>&lt;p&gt;Guess we&amp;rsquo;re going to find out if I really know what I&amp;rsquo;m doing.&lt;/p&gt;</description>
       

@@ -164,32 +164,32 @@
   // --------------------------------------------
   function initDynamicHeader() {
     const nav = document.querySelector('.nav');
-    const hero = document.querySelector('.hero');
+    const heroTitle = document.querySelector('.hero__title');
 
-    // Only run on pages with a hero section (main page)
-    if (!nav || !hero) {
+    // Only run on pages with a hero title (main page)
+    if (!nav || !heroTitle) {
       // On other pages, always show the nav brand
       if (nav) nav.classList.add('nav--scrolled');
       return;
     }
 
-    // Use IntersectionObserver to detect when hero leaves viewport
+    // Use IntersectionObserver to detect when "Paige Turner" title leaves viewport
     const observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          // Hero is visible - hide nav brand
+          // Title is visible - hide nav brand
           nav.classList.remove('nav--scrolled');
         } else {
-          // Hero is not visible - show nav brand
+          // Title is not visible - show nav brand
           nav.classList.add('nav--scrolled');
         }
       });
     }, {
       threshold: 0,
-      rootMargin: '-60px 0px 0px 0px' // Account for nav height
+      rootMargin: '-50px 0px 0px 0px' // Account for nav height
     });
 
-    observer.observe(hero);
+    observer.observe(heroTitle);
   }
 
   // --------------------------------------------

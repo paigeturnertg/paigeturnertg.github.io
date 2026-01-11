@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Highway to Elle - A transformation novel by Paige Turner about a cross-country road trip that changes everything.">
+  <meta name="description" content="Chapter 2 of Highway to Elle - A transformation novel by Paige Turner">
 
-  <title>Highway to Elle | Paige Turner</title>
+  <title>Chapter 2 | Highway to Elle | Paige Turner</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,55 +43,50 @@
     </div>
   </nav>
 
-  <!-- Work Header -->
-  <header class="work-header">
-    <div class="work-header__container">
-      <div class="work-header__cover">
-        <div class="work-header__image placeholder-image" style="width: 300px; aspect-ratio: 3/4; border-radius: 0.5rem;">
-          Cover Image Coming Soon
-        </div>
-      </div>
-
-      <div class="work-header__info">
-        <h1 class="work-header__title">Highway to Elle</h1>
-        <p class="work-header__meta">
-          Novel &bull; In Progress
-        </p>
-        <p class="work-header__description">
-          A cross-country road trip takes an unexpected turn when... (Add your story description here. This should be a compelling hook that draws readers in without giving away too much of the plot.)
-        </p>
-      </div>
+  <!-- Chapter Dropdown (Top) -->
+  <div class="chapter-nav-top">
+    <div class="chapter-nav-top__container">
+      <label for="chapter-select" class="sr-only">Jump to chapter</label>
+      <select id="chapter-select" class="chapter-nav__select">
+        <option value="">Jump to chapter...</option>
+        <option value="chapter-1.html">Chapter 1</option>
+        <option value="chapter-2.html" selected>Chapter 2</option>
+      </select>
     </div>
-  </header>
-
-  <!-- Table of Contents -->
-  <section class="toc">
-    <div class="toc__container">
-      <h2 class="toc__title">Table of Contents</h2>
-
-      <ol class="toc__list">
-        <li class="toc__item">
-          <a href="chapter-1.html" class="toc__link">
-            <span class="toc__chapter-num">1</span>
-            <span class="toc__chapter-title">Chapter Title</span>
-            <span class="toc__arrow">&rarr;</span>
-          </a>
-        </li>
-        <li class="toc__item">
-          <a href="chapter-2.html" class="toc__link">
-            <span class="toc__chapter-num">2</span>
-            <span class="toc__chapter-title">Chapter Title</span>
-            <span class="toc__arrow">&rarr;</span>
-          </a>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- Back to Library -->
-  <div class="container container--content text-center mb-2xl">
-    <a href="../../library.html" class="btn btn--secondary">&larr; Back to Library</a>
   </div>
+
+  <!-- Chapter Content -->
+  <main class="chapter">
+    <div class="chapter__container">
+      <header class="chapter__header">
+        <p class="chapter__number">Chapter Two</p>
+        <h1 class="chapter__title">Chapter Title Here</h1>
+      </header>
+
+      <article class="chapter__content">
+        <p class="drop-cap">
+          Your chapter content goes here. Replace this placeholder text with your actual story content. The drop-cap class creates a decorative large first letter to give your chapter opening a classic literary feel.
+        </p>
+
+        <p>
+          Continue your story in subsequent paragraphs. Each paragraph will be automatically styled with proper indentation and spacing for comfortable reading.
+        </p>
+
+        <p>
+          Add as many paragraphs as your chapter needs. The reading width is optimized for comfortable line lengths, and the typography scales nicely across different screen sizes.
+        </p>
+      </article>
+
+      <!-- Chapter Navigation (Bottom) -->
+      <nav class="chapter-nav" aria-label="Chapter navigation">
+        <div class="chapter-nav__links">
+          <a href="chapter-1.html" class="chapter-nav__link chapter-nav__link--prev">Previous</a>
+          <a href="index.html" class="chapter-nav__link chapter-nav__link--toc">Table of Contents</a>
+          <span></span> <!-- No next chapter yet -->
+        </div>
+      </nav>
+    </div>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">

@@ -386,14 +386,12 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-md) var(--space-lg);
+  padding: var(--space-sm) var(--space-lg);
   max-width: var(--max-width-wide);
   margin: 0 auto;
 }
 
 .nav__brand {
-  display: flex;
-  flex-direction: column;
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity var(--transition-base), transform var(--transition-base);
@@ -431,14 +429,9 @@ h4 {
     0 0 20px rgba(196, 169, 98, 0.5);
 }
 
+/* Hide tagline in nav - just show Paige Turner */
 .nav__tagline {
-  font-size: var(--text-xs);
-  color: var(--color-gold);
-  opacity: 0.7;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-top: 2px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  display: none;
 }
 
 .nav__menu {
@@ -447,29 +440,32 @@ h4 {
 }
 
 .nav__link {
-  font-family: var(--font-sans);
-  font-size: var(--text-sm);
-  font-weight: 500;
+  font-family: var(--font-script);
+  font-size: var(--text-lg);
+  font-style: italic;
   /* Gold embossed text */
   color: var(--color-gold);
   text-shadow:
     0 1px 0 var(--color-gold-dark),
     0 1px 2px rgba(0, 0, 0, 0.15);
   text-decoration: none;
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-xs) var(--space-sm);
   position: relative;
   transition: all var(--transition-base);
-  border-radius: var(--radius-sm);
 }
 
-.nav__link::before {
+/* Underline on hover */
+.nav__link::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: rgba(196, 169, 98, 0.1);
-  border-radius: var(--radius-sm);
-  opacity: 0;
-  transition: opacity var(--transition-base);
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-gold);
+  transition: all var(--transition-base);
+  transform: translateX(-50%);
+  border-radius: 2px;
 }
 
 .nav__link:hover {
@@ -479,17 +475,17 @@ h4 {
     0 0 15px rgba(196, 169, 98, 0.4);
 }
 
-.nav__link:hover::before {
-  opacity: 1;
+.nav__link:hover::after {
+  width: calc(100% + 16px);
 }
 
 .nav__link--active {
   color: var(--color-gold-light);
 }
 
-.nav__link--active::before {
-  opacity: 1;
-  background: rgba(196, 169, 98, 0.15);
+.nav__link--active::after {
+  width: calc(100% + 16px);
+  opacity: 0.6;
 }
 
 /* Mobile Navigation Toggle */
@@ -615,9 +611,9 @@ h4 {
   transition: all var(--transition-slow);
 }
 
-/* Shimmer glow effect on hover */
+/* Slight rotation on hover */
 .hero__image-wrapper:hover .hero__image {
-  transform: scale(1.02);
+  transform: rotate(2deg);
   box-shadow:
     var(--shadow-lg),
     0 0 60px rgba(196, 125, 125, 0.25),
@@ -626,12 +622,12 @@ h4 {
 
 .hero__image-wrapper:hover::before {
   opacity: 0.8;
-  transform: rotate(-1deg) scale(1.02);
+  transform: rotate(1deg);
 }
 
 .hero__image-wrapper:hover::after {
   opacity: 0.7;
-  transform: rotate(0.5deg) scale(1.02);
+  transform: rotate(2.5deg);
 }
 
 .hero__content {
@@ -786,13 +782,15 @@ h4 {
 }
 
 .btn--primary {
-  background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-teal-light) 100%);
-  color: var(--color-cream);
-  box-shadow: 0 4px 15px rgba(29, 75, 68, 0.3);
+  background-color: transparent;
+  color: var(--color-teal);
+  border: 2px solid var(--color-teal);
 }
 
 .btn--primary:hover {
+  background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-teal-light) 100%);
   color: var(--color-white);
+  border-color: var(--color-teal);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(29, 75, 68, 0.4);
 }
@@ -804,7 +802,7 @@ h4 {
 }
 
 .btn--secondary:hover {
-  background-color: var(--color-auburn);
+  background: linear-gradient(135deg, var(--color-auburn) 0%, var(--color-auburn-light) 100%);
   color: var(--color-white);
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(155, 61, 43, 0.3);
@@ -1116,23 +1114,18 @@ h4 {
   justify-content: center;
 }
 
-.connect .btn--primary {
-  background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-white) 100%);
-  color: var(--color-teal);
-}
-
-.connect .btn--primary:hover {
-  box-shadow: 0 6px 20px rgba(251, 248, 241, 0.3);
-}
-
+.connect .btn--primary,
 .connect .btn--secondary {
-  border-color: var(--color-cream);
+  background-color: transparent;
   color: var(--color-cream);
+  border: 2px solid var(--color-cream);
 }
 
+.connect .btn--primary:hover,
 .connect .btn--secondary:hover {
-  background-color: var(--color-cream);
+  background: var(--color-cream);
   color: var(--color-teal);
+  box-shadow: 0 6px 20px rgba(251, 248, 241, 0.3);
 }
 
 /* --------------------------------------------
@@ -1695,15 +1688,24 @@ h4 {
   letter-spacing: 0.5em;
 }
 
-/* Chapter Navigation */
+/* Chapter Dropdown (Top of Page) */
+.chapter-nav-top {
+  background-color: var(--color-cream-dark);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.chapter-nav-top__container {
+  max-width: var(--max-width-reading);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* Chapter Navigation (Bottom of Page) */
 .chapter-nav {
   margin-top: var(--space-3xl);
   padding-top: var(--space-xl);
   border-top: 1px solid var(--color-cream-dark);
-}
-
-.chapter-nav__dropdown {
-  margin-bottom: var(--space-xl);
 }
 
 .chapter-nav__select {

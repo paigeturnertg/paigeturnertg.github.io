@@ -24,7 +24,7 @@
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__container">
       <a href="../../index.html" class="nav__brand">
-        <span class="nav__logo">Paige Turner</span>
+        <span class="nav__logo">Paige Turner Fiction</span>
         <span class="nav__tagline">Transformation Fiction</span>
       </a>
 
@@ -42,6 +42,20 @@
       <div class="nav__overlay"></div>
     </div>
   </nav>
+
+  <!-- Chapter Dropdown (Top) -->
+  <div class="chapter-nav-top">
+    <div class="chapter-nav-top__container">
+      <label for="chapter-select" class="sr-only">Jump to chapter</label>
+      <select id="chapter-select" class="chapter-nav__select">
+        <option value="">Jump to chapter...</option>
+        <option value="chapter-1.html" selected>Chapter 1: Chapter Title</option>
+        <option value="chapter-2.html">Chapter 2: Chapter Title</option>
+        <option value="chapter-3.html">Chapter 3: Chapter Title</option>
+        <!-- Add more chapters as needed -->
+      </select>
+    </div>
+  </div>
 
   <!-- Chapter Content -->
   <main class="chapter">
@@ -85,20 +99,8 @@
         </p>
       </article>
 
-      <!-- Chapter Navigation -->
+      <!-- Chapter Navigation (Bottom) -->
       <nav class="chapter-nav" aria-label="Chapter navigation">
-        <!-- Chapter dropdown for direct navigation -->
-        <div class="chapter-nav__dropdown">
-          <label for="chapter-select" class="sr-only">Jump to chapter</label>
-          <select id="chapter-select" class="chapter-nav__select">
-            <option value="">Jump to chapter...</option>
-            <option value="chapter-1.html" selected>Chapter 1: Chapter Title</option>
-            <option value="chapter-2.html">Chapter 2: Chapter Title</option>
-            <option value="chapter-3.html">Chapter 3: Chapter Title</option>
-            <!-- Add more chapters as needed -->
-          </select>
-        </div>
-
         <!-- Previous / TOC / Next links -->
         <div class="chapter-nav__links">
           <!-- For first chapter, hide or disable previous link -->
@@ -118,7 +120,7 @@
   <footer class="footer">
     <div class="footer__content">
       <p class="footer__text">
-        &copy; 2025 Paige Turner. Made with <span class="footer__heart">&hearts;</span> and entirely too much tea.
+        &copy; 2026 Paige Turner. Made with <span class="footer__heart">&hearts;</span> and entirely too much coffee.
       </p>
     </div>
   </footer>

@@ -454,7 +454,7 @@ h4 {
   transition: all var(--transition-base);
 }
 
-/* Flourish underline on hover */
+/* Underline on hover */
 .nav__link::after {
   content: '';
   position: absolute;
@@ -468,19 +468,6 @@ h4 {
   border-radius: 2px;
 }
 
-/* Curled flourish ends */
-.nav__link::before {
-  content: '~';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  font-size: 0.7em;
-  color: var(--color-gold);
-  opacity: 0;
-  transform: scaleX(-1) translateX(50%);
-  transition: opacity var(--transition-base);
-}
-
 .nav__link:hover {
   color: var(--color-gold-light);
   text-shadow:
@@ -490,10 +477,6 @@ h4 {
 
 .nav__link:hover::after {
   width: calc(100% + 16px);
-}
-
-.nav__link:hover::before {
-  opacity: 1;
 }
 
 .nav__link--active {
@@ -1705,15 +1688,24 @@ h4 {
   letter-spacing: 0.5em;
 }
 
-/* Chapter Navigation */
+/* Chapter Dropdown (Top of Page) */
+.chapter-nav-top {
+  background-color: var(--color-cream-dark);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.chapter-nav-top__container {
+  max-width: var(--max-width-reading);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* Chapter Navigation (Bottom of Page) */
 .chapter-nav {
   margin-top: var(--space-3xl);
   padding-top: var(--space-xl);
   border-top: 1px solid var(--color-cream-dark);
-}
-
-.chapter-nav__dropdown {
-  margin-bottom: var(--space-xl);
 }
 
 .chapter-nav__select {

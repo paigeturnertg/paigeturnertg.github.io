@@ -24,7 +24,7 @@
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__container">
       <a href="../../index.html" class="nav__brand">
-        <span class="nav__logo">Paige Turner</span>
+        <span class="nav__logo">Paige Turner Fiction</span>
         <span class="nav__tagline">Transformation Fiction</span>
       </a>
 
@@ -42,6 +42,18 @@
       <div class="nav__overlay"></div>
     </div>
   </nav>
+
+  <!-- Chapter Dropdown (Top) -->
+  <div class="chapter-nav-top">
+    <div class="chapter-nav-top__container">
+      <label for="chapter-select" class="sr-only">Jump to chapter</label>
+      <select id="chapter-select" class="chapter-nav__select">
+        <option value="">Jump to chapter...</option>
+        <option value="chapter-1.html">Chapter 1</option>
+        <option value="chapter-2.html" selected>Chapter 2</option>
+      </select>
+    </div>
+  </div>
 
   <!-- Chapter Content -->
   <main class="chapter">
@@ -65,17 +77,8 @@
         </p>
       </article>
 
-      <!-- Chapter Navigation -->
+      <!-- Chapter Navigation (Bottom) -->
       <nav class="chapter-nav" aria-label="Chapter navigation">
-        <div class="chapter-nav__dropdown">
-          <label for="chapter-select" class="sr-only">Jump to chapter</label>
-          <select id="chapter-select" class="chapter-nav__select">
-            <option value="">Jump to chapter...</option>
-            <option value="chapter-1.html">Chapter 1</option>
-            <option value="chapter-2.html" selected>Chapter 2</option>
-          </select>
-        </div>
-
         <div class="chapter-nav__links">
           <a href="chapter-1.html" class="chapter-nav__link chapter-nav__link--prev">Previous</a>
           <a href="index.html" class="chapter-nav__link chapter-nav__link--toc">Table of Contents</a>

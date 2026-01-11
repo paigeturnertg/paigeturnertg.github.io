@@ -43,55 +43,183 @@
     </div>
   </nav>
 
-  <!-- Work Header -->
-  <header class="work-header">
-    <div class="work-header__container">
-      <div class="work-header__cover">
-        <div class="work-header__image placeholder-image" style="width: 300px; aspect-ratio: 3/4; border-radius: 0.5rem;">
-          Cover Image Coming Soon
+  <!-- Work Page with Sticky Cover -->
+  <div style="max-width: 1200px; margin: 0 auto; padding: var(--space-3xl) var(--space-lg);">
+    <div style="display: grid; grid-template-columns: 350px 1fr; gap: var(--space-3xl); align-items: start;">
+
+      <!-- Sticky Cover & Info (Left Column) -->
+      <div style="position: sticky; top: calc(var(--space-3xl) + 60px);">
+        <div class="work-header__cover" style="margin-bottom: var(--space-xl);">
+          <img src="../../images/works/hwyellecover.jpg" alt="Highway to Elle Cover" class="work-header__image" style="width: 100%; aspect-ratio: 3/4; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+        </div>
+
+        <div class="work-header__info" style="text-align: left;">
+          <h1 class="work-header__title" style="margin-bottom: var(--space-sm);">Highway to Elle</h1>
+          <p class="work-header__meta" style="margin-bottom: var(--space-xs);">
+            Novel
+          </p>
+          <p style="font-size: var(--text-sm); color: var(--color-rose); margin-bottom: var(--space-lg); font-weight: 500;">
+            #MedTech #AgeRegression #Cheerleader
+          </p>
+          <p class="work-header__description" style="margin-bottom: var(--space-lg);">
+            When star wide receiver Logan Turner suffers a devastating back injury that ends his football career and costs him his scholarship, desperation leads him to a mysterious facility promising athletic repurposing and a second chance. Under the care of the enigmatic Dr. Gupta, Logan begins a process he doesn't fully understand—as strange occurrences mount at the facility, he faces a transformation far more profound than he ever anticipated, unaware that the path ahead is nothing like he could have imagined.
+          </p>
+          <a href="../../works/pdfs/highway-to-elle.pdf" class="btn btn--secondary" style="width: 100%;">
+            Download Author's Edition PDF
+          </a>
         </div>
       </div>
 
-      <div class="work-header__info">
-        <h1 class="work-header__title">Highway to Elle</h1>
-        <p class="work-header__meta">
-          Novel &bull; In Progress
-        </p>
-        <p class="work-header__description">
-          A cross-country road trip takes an unexpected turn when... (Add your story description here. This should be a compelling hook that draws readers in without giving away too much of the plot.)
-        </p>
-      </div>
-    </div>
-  </header>
+      <!-- Table of Contents (Right Column) -->
+      <div>
+        <section class="toc" style="padding: 0;">
+          <div class="toc__container" style="padding: 0; max-width: none;">
+            <h2 class="toc__title">Table of Contents</h2>
 
-  <!-- Table of Contents -->
-  <section class="toc">
-    <div class="toc__container">
-      <h2 class="toc__title">Table of Contents</h2>
-
-      <ol class="toc__list">
+            <ol class="toc__list">
         <li class="toc__item">
           <a href="chapter-1.html" class="toc__link">
             <span class="toc__chapter-num">1</span>
-            <span class="toc__chapter-title">Chapter Title</span>
+            <span class="toc__chapter-title">Tumbling Down</span>
             <span class="toc__arrow">&rarr;</span>
           </a>
         </li>
         <li class="toc__item">
           <a href="chapter-2.html" class="toc__link">
             <span class="toc__chapter-num">2</span>
-            <span class="toc__chapter-title">Chapter Title</span>
+            <span class="toc__chapter-title">Cheer Pressure</span>
             <span class="toc__arrow">&rarr;</span>
           </a>
         </li>
-      </ol>
-    </div>
-  </section>
+        <li class="toc__item">
+          <a href="chapter-3.html" class="toc__link">
+            <span class="toc__chapter-num">3</span>
+            <span class="toc__chapter-title">Short Notice</span>
+            <span class="toc__arrow">&rarr;</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="chapter-4.html" class="toc__link">
+            <span class="toc__chapter-num">4</span>
+            <span class="toc__chapter-title">One Elle of a Makeover</span>
+            <span class="toc__arrow">&rarr;</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="chapter-5.html" class="toc__link">
+            <span class="toc__chapter-num">5</span>
+            <span class="toc__chapter-title">Sync or Swim</span>
+            <span class="toc__arrow">&rarr;</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="chapter-6.html" class="toc__link">
+            <span class="toc__chapter-num">6</span>
+            <span class="toc__chapter-title">Roomie With a Hue</span>
+            <span class="toc__arrow">&rarr;</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="chapter-7.html" class="toc__link">
+            <span class="toc__chapter-num">7</span>
+            <span class="toc__chapter-title">A Class Act</span>
+            <span class="toc__arrow">&rarr;</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="chapter-8.html" class="toc__link">
+            <span class="toc__chapter-num">8</span>
+            <span class="toc__chapter-title">Diminishing Returns</span>
+            <span class="toc__arrow">&rarr;</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="chapter-9.html" class="toc__link">
+            <span class="toc__chapter-num">9</span>
+            <span class="toc__chapter-title">High Maintenance</span>
+            <span class="toc__arrow">&rarr;</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="chapter-10.html" class="toc__link">
+            <span class="toc__chapter-num">10</span>
+            <span class="toc__chapter-title">Lesson Plans</span>
+            <span class="toc__arrow">&rarr;</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="chapter-11.html" class="toc__link">
+            <span class="toc__chapter-num">11</span>
+            <span class="toc__chapter-title">Altered State</span>
+            <span class="toc__arrow">&rarr;</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="chapter-12.html" class="toc__link">
+            <span class="toc__chapter-num">12</span>
+            <span class="toc__chapter-title">Organic Chemistry</span>
+            <span class="toc__arrow">&rarr;</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="chapter-13.html" class="toc__link">
+            <span class="toc__chapter-num">13</span>
+            <span class="toc__chapter-title">Freedom of Beach</span>
+            <span class="toc__arrow">&rarr;</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="chapter-14.html" class="toc__link">
+            <span class="toc__chapter-num">14</span>
+            <span class="toc__chapter-title">Future Tense</span>
+            <span class="toc__arrow">&rarr;</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="chapter-15.html" class="toc__link">
+            <span class="toc__chapter-num">15</span>
+            <span class="toc__chapter-title">Elle of the Ball</span>
+            <span class="toc__arrow">&rarr;</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="chapter-16.html" class="toc__link">
+            <span class="toc__chapter-num">16</span>
+            <span class="toc__chapter-title">Commencement</span>
+            <span class="toc__arrow">&rarr;</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="epilogue.html" class="toc__link">
+            <span class="toc__chapter-num"></span>
+            <span class="toc__chapter-title">Epilogue and Author's Note</span>
+            <span class="toc__arrow">&rarr;</span>
+          </a>
+        </li>
+            </ol>
+          </div>
+        </section>
 
-  <!-- Back to Library -->
-  <div class="container container--content text-center mb-2xl">
-    <a href="../../library.html" class="btn btn--secondary">&larr; Back to Library</a>
+        <!-- Back to Library -->
+        <div style="text-align: center; margin-top: var(--space-2xl);">
+          <a href="../../library.html" class="btn btn--secondary">&larr; Back to Library</a>
+        </div>
+      </div>
+
+    </div>
   </div>
+
+  <!-- Mobile-only responsive style -->
+  <style>
+    @media (max-width: 768px) {
+      div[style*="grid-template-columns: 350px 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
+      div[style*="position: sticky"] {
+        position: static !important;
+      }
+    }
+  </style>
 
   <!-- Footer -->
   <footer class="footer">

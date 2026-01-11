@@ -160,6 +160,75 @@
   }
 
   // --------------------------------------------
+  // Dynamic Header Show/Hide on Scroll
+  // --------------------------------------------
+  function initDynamicHeader() {
+    const nav = document.querySelector('.nav');
+    const hero = document.querySelector('.hero');
+
+    // Only run on pages with a hero section (main page)
+    if (!nav || !hero) {
+      // On other pages, always show the nav brand
+      if (nav) nav.classList.add('nav--scrolled');
+      return;
+    }
+
+    // Use IntersectionObserver to detect when hero leaves viewport
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          // Hero is visible - hide nav brand
+          nav.classList.remove('nav--scrolled');
+        } else {
+          // Hero is not visible - show nav brand
+          nav.classList.add('nav--scrolled');
+        }
+      });
+    }, {
+      threshold: 0,
+      rootMargin: '-60px 0px 0px 0px' // Account for nav height
+    });
+
+    observer.observe(hero);
+  }
+
+  // --------------------------------------------
+  // Back to Top Button
+  // --------------------------------------------
+  function initBackToTop() {
+    const backToTop = document.querySelector('.back-to-top');
+
+    if (!backToTop) return;
+
+    const btn = backToTop.querySelector('.back-to-top__btn');
+
+    // Show/hide based on scroll position
+    function toggleVisibility() {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('is-visible');
+      } else {
+        backToTop.classList.remove('is-visible');
+      }
+    }
+
+    // Scroll to top on click
+    if (btn) {
+      btn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // Check on scroll
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+
+    // Initial check
+    toggleVisibility();
+  }
+
+  // --------------------------------------------
   // Initialize Everything
   // --------------------------------------------
   function init() {
@@ -168,6 +237,8 @@
     initSmoothScroll();
     setActiveNavLink();
     initScrollAnimations();
+    initDynamicHeader();
+    initBackToTop();
   }
 
   // Run on DOM ready

@@ -1632,7 +1632,7 @@ h4 {
   font-family: var(--font-script);
   font-size: var(--text-4xl);
   font-style: italic;
-  color: var(--color-gold-dark);
+  color: var(--color-teal);
   margin-bottom: var(--space-lg);
   letter-spacing: 0.03em;
 }

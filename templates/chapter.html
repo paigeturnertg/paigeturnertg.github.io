@@ -61,6 +61,7 @@
   <main class="chapter">
     <div class="chapter__container">
       <header class="chapter__header">
+        <h2 class="chapter__story-title">Story Title</h2>
         <p class="chapter__number">Chapter One</p>
         <h1 class="chapter__title">Chapter Title</h1>
       </header>
@@ -84,11 +85,11 @@
         </p>
 
         <p>
-          When you need a scene break, you can use a horizontal rule or simply leave some extra space between paragraphs. The CSS will handle the visual separation elegantly.
+          When you need a scene break, use the decorative scene break div shown below:
         </p>
 
         <!-- Scene break example -->
-        <p style="text-align: center; margin: 2rem 0;">* * *</p>
+        <div class="scene-break">✦ ✦ ✦</div>
 
         <p>
           After a scene break, continue your story. You might want to use a drop-cap again for the first paragraph after a major scene change, though this is a stylistic choice.
@@ -138,6 +139,7 @@
 3. Update these elements:
    - <title> tag with chapter number and story title
    - Meta description
+   - chapter__story-title with your story title (e.g., "Highway to Elle")
    - chapter__number text (Chapter One, Chapter Two, etc.)
    - chapter__title with your chapter title
    - All content in chapter__content
@@ -151,8 +153,10 @@ NAVIGATION NOTES:
 - Mark the current chapter as "selected" in the dropdown
 
 STYLING TIPS:
+- Story title appears above chapter number with teal color and rose flourishes
 - Use class="drop-cap" on the first paragraph for a decorative first letter
-- Use <p style="text-align: center; margin: 2rem 0;">* * *</p> for scene breaks
+- Use <div class="scene-break">✦ ✦ ✦</div> for scene breaks
 - All other paragraphs need no special classes
 - The CSS handles indentation and spacing automatically
+- Images in figures will open in a beautiful lightbox overlay when clicked
 -->

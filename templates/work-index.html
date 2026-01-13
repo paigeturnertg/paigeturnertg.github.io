@@ -43,50 +43,43 @@
     </div>
   </nav>
 
-  <!-- Work Header -->
-  <header class="work-header">
-    <div class="work-header__container">
-      <div class="work-header__cover">
-        <!-- Replace with actual cover image -->
-        <div class="work-header__image placeholder-image" style="width: 300px; aspect-ratio: 3/4; border-radius: 0.5rem;">
-          Cover Image
+  <!-- Work Page with Sticky Cover -->
+  <div style="max-width: 1200px; margin: 0 auto; padding: var(--space-3xl) var(--space-lg);">
+    <div style="display: grid; grid-template-columns: 350px 1fr; gap: var(--space-3xl); align-items: start;">
+
+      <!-- Sticky Cover & Info (Left Column) -->
+      <div style="position: sticky; top: calc(var(--space-3xl) + 60px);">
+        <div class="work-header__cover" style="margin-bottom: var(--space-xl);">
+          <img src="../../images/works/story-cover.jpg" alt="Story Title Cover" class="work-header__image" style="width: 100%; aspect-ratio: 3/4; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
         </div>
-        <!-- Or use an actual image:
-        <img
-          src="../../images/covers/story-name.jpg"
-          alt="Cover for Story Title"
-          class="work-header__image"
-        >
-        -->
-      </div>
 
-      <div class="work-header__info">
-        <h1 class="work-header__title">Story Title</h1>
-        <p class="work-header__meta">
-          Novel &bull; XX,XXX words &bull; Completed January 2025
-        </p>
-        <p class="work-header__description">
-          Write a compelling description/blurb for your story here. This should hook readers and give them a sense of what the story is about without giving away too much. Aim for 2-3 sentences that capture the essence of the transformation and the journey your protagonist takes.
-        </p>
-
-        <!-- Optional PDF download -->
-        <!--
-        <div class="mt-lg">
-          <a href="../pdfs/story-name.pdf" class="btn btn--secondary" download>
-            Download Author's Edition (PDF)
+        <div class="work-header__info" style="text-align: left;">
+          <h1 class="work-header__title" style="margin-bottom: var(--space-sm);">Story Title</h1>
+          <p class="work-header__meta" style="margin-bottom: var(--space-xs);">
+            Novel
+          </p>
+          <p style="font-size: var(--text-sm); color: var(--color-rose); margin-bottom: var(--space-lg); font-weight: 500;">
+            #Tag1 #Tag2 #Tag3
+          </p>
+          <p class="work-header__description" style="margin-bottom: var(--space-lg);">
+            Write a compelling description/blurb for your story here. This should hook readers and give them a sense of what the story is about without giving away too much. Aim for 2-3 sentences that capture the essence of the transformation and the journey your protagonist takes.
+          </p>
+          <a href="../../works/pdfs/story-name.pdf" class="btn btn--secondary" style="width: 100%; margin-bottom: var(--space-md);">
+            Download Author's Edition PDF
+          </a>
+          <a href="../../works/epubs/story-name.epub" class="btn btn--secondary" style="width: 100%;">
+            Download Author's Edition EPUB
           </a>
         </div>
-        -->
       </div>
-    </div>
-  </header>
 
-  <!-- Table of Contents -->
-  <section class="toc">
-    <div class="toc__container">
-      <h2 class="toc__title">Table of Contents</h2>
+      <!-- Table of Contents (Right Column) -->
+      <div>
+        <section class="toc" style="padding: 0;">
+          <div class="toc__container" style="padding: 0; max-width: none;">
+            <h2 class="toc__title">Table of Contents</h2>
 
-      <ol class="toc__list">
+            <ol class="toc__list">
         <li class="toc__item">
           <a href="chapter-1.html" class="toc__link">
             <span class="toc__chapter-num">1</span>
@@ -109,14 +102,30 @@
           </a>
         </li>
         <!-- Add more chapters as needed -->
-      </ol>
-    </div>
-  </section>
+            </ol>
+          </div>
+        </section>
 
-  <!-- Back to Library -->
-  <div class="container container--content text-center mb-2xl">
-    <a href="../../library.html" class="btn btn--secondary">&larr; Back to Library</a>
+        <!-- Back to Library -->
+        <div style="text-align: center; margin-top: var(--space-2xl);">
+          <a href="../../library.html" class="btn btn--secondary">&larr; Back to Library</a>
+        </div>
+      </div>
+
+    </div>
   </div>
+
+  <!-- Mobile-only responsive style -->
+  <style>
+    @media (max-width: 768px) {
+      div[style*="grid-template-columns: 350px 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
+      div[style*="position: sticky"] {
+        position: static !important;
+      }
+    }
+  </style>
 
   <!-- Footer -->
   <footer class="footer">
@@ -139,12 +148,20 @@
 2. Copy this file into that folder as index.html
 3. Update all the placeholder content:
    - <title> and meta description
-   - Story title, word count, completion status
+   - Story title in the sidebar
+   - Cover image path (../../images/works/story-cover.jpg)
+   - Hashtags for the story (#Tag1 #Tag2 #Tag3)
    - Story description/blurb
-   - Cover image (or keep placeholder)
+   - Download button paths for PDF and EPUB
    - Table of contents with chapter titles
 4. Create chapter files (copy from chapter.html template)
 5. Add a card for this story in library.html
+
+DESIGN NOTES:
+- The left sidebar is sticky and stays visible while scrolling
+- On mobile, the layout switches to a single column
+- Download buttons are full-width for better mobile experience
+- Hashtags use the rose color for visual interest
 
 File structure for a story:
 /works/

@@ -229,6 +229,71 @@
   }
 
   // --------------------------------------------
+  // Lightbox for Images
+  // --------------------------------------------
+  function initLightbox() {
+    // Create lightbox element if it doesn't exist
+    let lightbox = document.querySelector('.lightbox');
+    if (!lightbox) {
+      lightbox = document.createElement('div');
+      lightbox.className = 'lightbox';
+      lightbox.innerHTML = `
+        <button class="lightbox__close" aria-label="Close lightbox">&times;</button>
+        <div class="lightbox__content">
+          <img class="lightbox__image" src="" alt="">
+          <div class="lightbox__caption"></div>
+        </div>
+      `;
+      document.body.appendChild(lightbox);
+    }
+
+    const lightboxImg = lightbox.querySelector('.lightbox__image');
+    const lightboxCaption = lightbox.querySelector('.lightbox__caption');
+    const lightboxClose = lightbox.querySelector('.lightbox__close');
+
+    // Find all images that should open in lightbox
+    const lightboxLinks = document.querySelectorAll('figure a[href$=".jpg"], figure a[href$=".jpeg"], figure a[href$=".png"], figure a[href$=".gif"]');
+
+    lightboxLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const imgSrc = this.getAttribute('href');
+        const figure = this.closest('figure');
+        const caption = figure ? figure.querySelector('figcaption') : null;
+
+        lightboxImg.src = imgSrc;
+        lightboxImg.alt = this.querySelector('img')?.alt || '';
+        lightboxCaption.textContent = caption ? caption.textContent : '';
+
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Close lightbox
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    // Close on background click
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+  }
+
+  // --------------------------------------------
   // Initialize Everything
   // --------------------------------------------
   function init() {
@@ -239,6 +304,7 @@
     initScrollAnimations();
     initDynamicHeader();
     initBackToTop();
+    initLightbox();
   }
 
   // Run on DOM ready

@@ -56,9 +56,9 @@
     <div class="library__grid">
 
       <!-- Work Card: Highway to Elle -->
-      <article class="work-card">
-        <div class="work-card__image" style="aspect-ratio: auto;">
-          <img src="images/works/hwyellecover.jpg" alt="Highway to Elle Cover" style="width: 100%; height: auto; object-fit: contain;">
+      <a href="works/highway-to-elle/index.html" class="work-card">
+        <div class="work-card__image">
+          <img src="images/works/hwyellecover.jpg" alt="Highway to Elle Cover">
         </div>
         <div class="work-card__content">
           <span class="work-card__tag">Novel</span>
@@ -69,17 +69,13 @@
           <p class="work-card__excerpt">
             When star wide receiver Logan Turner suffers a devastating back injury, desperation leads him to a mysterious facility promising athletic repurposing—but the transformation ahead is nothing like he could have imagined.
           </p>
-          <div class="work-card__links">
-            <a href="works/highway-to-elle/index.html" class="btn btn--small btn--primary">Read Online</a>
-            <a href="works/pdfs/highway-to-elle.pdf" class="btn btn--small btn--secondary">Download PDF</a>
-          </div>
         </div>
-      </article>
+      </a>
 
       <!-- Work Card: Placeholder 2 -->
       <article class="work-card">
-        <div class="work-card__image placeholder-image" style="aspect-ratio: 3/4;">
-          Cover Image Coming Soon
+        <div class="work-card__image work-card__image--letterbox">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%23D4A5A5' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='%23FFFFFF' opacity='0.7'%3ECover Coming Soon%3C/text%3E%3C/svg%3E" alt="Placeholder cover">
         </div>
         <div class="work-card__content">
           <span class="work-card__tag">Short Story</span>
@@ -87,16 +83,13 @@
           <p class="work-card__excerpt">
             Brief description of the story goes here. Keep it to 2-3 sentences that hook the reader.
           </p>
-          <div class="work-card__links">
-            <a href="#" class="btn btn--small btn--primary">Read Online</a>
-          </div>
         </div>
       </article>
 
       <!-- Work Card: Placeholder 3 -->
       <article class="work-card">
-        <div class="work-card__image placeholder-image" style="aspect-ratio: 3/4;">
-          Cover Image Coming Soon
+        <div class="work-card__image work-card__image--letterbox">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%23C47D7D' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='%23FFFFFF' opacity='0.7'%3ECover Coming Soon%3C/text%3E%3C/svg%3E" alt="Placeholder cover">
         </div>
         <div class="work-card__content">
           <span class="work-card__tag">Series</span>
@@ -104,9 +97,6 @@
           <p class="work-card__excerpt">
             Brief description of the story goes here. Keep it to 2-3 sentences that hook the reader.
           </p>
-          <div class="work-card__links">
-            <a href="#" class="btn btn--small btn--primary">Read Online</a>
-          </div>
         </div>
       </article>
 
@@ -114,29 +104,39 @@
       === HOW TO ADD A NEW STORY ===
 
       1. Copy the work-card template below
-      2. Update the image src (or keep placeholder)
-      3. Change the tag (Novel, Short Story, Series, etc.)
-      4. Update title and excerpt
-      5. Update the href links to point to your story
+      2. Update the href to point to your story's index page
+      3. Update the image src
+         - For 2:3 ratio covers: use work-card__image (no additional class)
+         - For square covers: add work-card__image--letterbox class for dark teal letterboxing
+      4. Change the tag (Novel, Short Story, Series, etc.)
+      5. Update title, hashtags, and excerpt
 
-      <article class="work-card">
-        <img
-          src="images/covers/your-story-cover.jpg"
-          alt="Cover for Your Story Title"
-          class="work-card__image"
-        >
+      Example with 2:3 cover:
+      <a href="works/your-story/index.html" class="work-card">
+        <div class="work-card__image">
+          <img src="images/works/your-story-cover.jpg" alt="Your Story Title Cover">
+        </div>
         <div class="work-card__content">
           <span class="work-card__tag">Novel</span>
           <h2 class="work-card__title">Your Story Title</h2>
+          <p style="font-size: var(--text-xs); color: var(--color-rose); margin-bottom: var(--space-sm); font-weight: 500;">
+            #Tag1 #Tag2 #Tag3
+          </p>
           <p class="work-card__excerpt">
             Brief description goes here...
           </p>
-          <div class="work-card__links">
-            <a href="works/your-story/index.html" class="btn btn--small btn--primary">Read Online</a>
-            <a href="works/pdfs/your-story.pdf" class="btn btn--small btn--secondary" download>Download PDF</a>
-          </div>
         </div>
-      </article>
+      </a>
+
+      Example with square cover (uses letterbox):
+      <a href="works/your-story/index.html" class="work-card">
+        <div class="work-card__image work-card__image--letterbox">
+          <img src="images/works/your-square-cover.jpg" alt="Your Story Title Cover">
+        </div>
+        <div class="work-card__content">
+          ...
+        </div>
+      </a>
       -->
 
     </div>

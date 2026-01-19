@@ -1261,21 +1261,13 @@ h4 {
 /* Newsletter Signup Form */
 .connect__newsletter {
   max-width: 500px;
-  margin: 0 auto var(--space-2xl);
+  margin: var(--space-2xl) auto 0;
   text-align: center;
-}
-
-.connect__newsletter-title {
-  font-family: var(--font-script);
-  font-size: var(--text-2xl);
-  font-style: italic;
-  color: var(--color-gold-light);
-  margin-bottom: var(--space-sm);
 }
 
 .connect__newsletter-text {
   color: rgba(251, 248, 241, 0.85);
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   margin-bottom: var(--space-lg);
   line-height: 1.6;
 }

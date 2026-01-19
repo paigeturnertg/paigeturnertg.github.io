@@ -179,36 +179,6 @@
         Got a question? Want to gush about your favorite transformation tropes? Just want to say hi? I'd love to hear from you!
       </p>
 
-      <!-- Email Signup Form -->
-      <div class="connect__newsletter">
-        <h3 class="connect__newsletter-title">Get Story Updates</h3>
-        <p class="connect__newsletter-text">
-          Subscribe to get notified when I publish new stories. No spam, just the good stuff.
-        </p>
-        <form
-          action="https://buttondown.email/api/emails/embed-subscribe/paigeturnertg"
-          method="post"
-          target="popupwindow"
-          onsubmit="window.open('https://buttondown.email/paigeturnertg', 'popupwindow')"
-          class="newsletter-form"
-        >
-          <div class="newsletter-form__group">
-            <label for="bd-email" class="sr-only">Enter your email</label>
-            <input
-              type="email"
-              name="email"
-              id="bd-email"
-              placeholder="your@email.com"
-              required
-              class="newsletter-form__input"
-            />
-            <button type="submit" class="newsletter-form__button">
-              Subscribe
-            </button>
-          </div>
-        </form>
-      </div>
-
       <div class="btn-group">
         <a href="mailto:paigeturnertg@gmail.com" class="btn btn--primary btn--email">
           <span class="btn__icon">
@@ -225,6 +195,36 @@
           </svg>
           Join the Discord
         </a>
+      </div>
+
+      <!-- Email Signup Form -->
+      <div class="connect__newsletter">
+        <p class="connect__newsletter-text">
+          Subscribe to get notified when I publish new stories. No spam, just the good stuff.
+        </p>
+        <form
+          action="https://buttondown.com/api/emails/embed-subscribe/paigeturnertg"
+          method="post"
+          target="popupwindow"
+          onsubmit="window.open('https://buttondown.com/paigeturnertg', 'popupwindow')"
+          class="newsletter-form"
+        >
+          <div class="newsletter-form__group">
+            <label for="bd-email" class="sr-only">Enter your email</label>
+            <input
+              type="email"
+              name="email"
+              id="bd-email"
+              placeholder="your@email.com"
+              required
+              class="newsletter-form__input"
+            />
+            <input type="hidden" value="1" name="embed" />
+            <button type="submit" class="newsletter-form__button">
+              Subscribe
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </section>

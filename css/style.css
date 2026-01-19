@@ -560,7 +560,7 @@ h4 {
    Hero Section - More Whimsical
    -------------------------------------------- */
 .hero {
-  padding: var(--space-2xl) 0 var(--space-2xl);
+  padding: var(--space-2xl) 0 var(--space-4xl);
   background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-pink) 100%);
   position: relative;
   overflow: hidden;
@@ -886,8 +886,9 @@ h4 {
    -------------------------------------------- */
 .bio {
   background-color: var(--color-cream);
-  padding: var(--space-3xl) 0;
+  padding: var(--space-xl) 0 var(--space-3xl);
   position: relative;
+  box-shadow: 0 2px 20px rgba(45, 42, 38, 0.04);
 }
 
 .bio__content {
@@ -935,8 +936,9 @@ h4 {
    -------------------------------------------- */
 .journal {
   background-color: var(--color-white);
-  padding: var(--space-3xl) 0;
-  border-top: 1px solid var(--color-cream-dark);
+  padding: var(--space-xl) 0 var(--space-3xl);
+  box-shadow: 0 2px 20px rgba(45, 42, 38, 0.04);
+  position: relative;
 }
 
 .journal__container {
@@ -1055,10 +1057,10 @@ h4 {
    Featured Works Section
    -------------------------------------------- */
 .featured {
-  padding: var(--space-3xl) 0;
+  padding: var(--space-xl) 0 var(--space-3xl);
   background: linear-gradient(180deg, var(--color-cream-pink) 0%, var(--color-white) 50%, var(--color-cream-pink) 100%);
-  border-top: 1px solid var(--color-rose-muted);
-  border-bottom: 1px solid var(--color-rose-muted);
+  box-shadow: 0 -2px 20px rgba(45, 42, 38, 0.04), 0 2px 20px rgba(45, 42, 38, 0.04);
+  position: relative;
 }
 
 .featured__header {

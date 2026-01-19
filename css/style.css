@@ -560,7 +560,7 @@ h4 {
    Hero Section - More Whimsical
    -------------------------------------------- */
 .hero {
-  padding: var(--space-3xl) 0 var(--space-4xl);
+  padding: var(--space-2xl) 0 var(--space-4xl);
   background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-pink) 100%);
   position: relative;
   overflow: hidden;
@@ -581,7 +581,7 @@ h4 {
 .hero__container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-2xl);
+  gap: var(--space-xl);
   align-items: center;
   max-width: var(--max-width-wide);
   margin: 0 auto;
@@ -885,9 +885,10 @@ h4 {
    Bio Section - More Personality
    -------------------------------------------- */
 .bio {
-  background-color: var(--color-white);
-  padding: var(--space-3xl) 0;
+  background-color: var(--color-cream);
+  padding: var(--space-xl) 0 var(--space-3xl);
   position: relative;
+  box-shadow: 0 2px 20px rgba(45, 42, 38, 0.04);
 }
 
 .bio__content {
@@ -934,8 +935,10 @@ h4 {
    Journal Section
    -------------------------------------------- */
 .journal {
-  background-color: var(--color-cream-pink);
-  padding: var(--space-3xl) 0;
+  background-color: var(--color-white);
+  padding: var(--space-xl) 0 var(--space-3xl);
+  box-shadow: 0 2px 20px rgba(45, 42, 38, 0.04);
+  position: relative;
 }
 
 .journal__container {
@@ -1054,8 +1057,10 @@ h4 {
    Featured Works Section
    -------------------------------------------- */
 .featured {
-  padding: var(--space-3xl) 0;
-  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-pink) 50%, var(--color-cream) 100%);
+  padding: var(--space-xl) 0 var(--space-3xl);
+  background: linear-gradient(180deg, var(--color-cream-pink) 0%, var(--color-white) 50%, var(--color-cream-pink) 100%);
+  box-shadow: 0 -2px 20px rgba(45, 42, 38, 0.04), 0 2px 20px rgba(45, 42, 38, 0.04);
+  position: relative;
 }
 
 .featured__header {
@@ -1251,6 +1256,68 @@ h4 {
   background: var(--color-cream);
   color: var(--color-teal);
   box-shadow: 0 6px 20px rgba(251, 248, 241, 0.3);
+}
+
+/* Newsletter Signup Form */
+.connect__newsletter {
+  max-width: 500px;
+  margin: var(--space-2xl) auto 0;
+  text-align: center;
+}
+
+.newsletter-form__group {
+  display: flex;
+  gap: var(--space-sm);
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.newsletter-form__input {
+  flex: 1;
+  padding: var(--space-md) var(--space-lg);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-charcoal);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-cream);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  outline: none;
+}
+
+.newsletter-form__input::placeholder {
+  color: var(--color-gray-light);
+}
+
+.newsletter-form__input:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 4px rgba(196, 169, 98, 0.2);
+}
+
+.newsletter-form__button {
+  padding: var(--space-md) var(--space-2xl);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-teal);
+  background-color: var(--color-cream);
+  border: 2px solid var(--color-cream);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.newsletter-form__button:hover {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(196, 169, 98, 0.4);
+}
+
+.newsletter-form__button:active {
+  transform: translateY(0);
 }
 
 /* --------------------------------------------
@@ -2139,7 +2206,7 @@ h4 {
 
   .hero__container {
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-3xl);
+    gap: var(--space-2xl);
   }
 
   .hero__content {
@@ -2275,6 +2342,15 @@ h4 {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+  }
+
+  /* Stack newsletter form vertically on mobile */
+  .newsletter-form__group {
+    flex-direction: column;
+  }
+
+  .newsletter-form__button {
+    width: 100%;
   }
 }
 

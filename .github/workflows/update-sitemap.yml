@@ -1,0 +1,69 @@
+name: Update Sitemap
+
+# Trigger the workflow on:
+# - Push to main branch
+# - Manual workflow dispatch
+# - Schedule (weekly on Sundays at midnight UTC)
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.html'
+      - 'generate-sitemap.py'
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sundays at midnight UTC
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for accurate last-modified dates
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Generate sitemap
+        run: |
+          python generate-sitemap.py
+          echo "Sitemap generation complete"
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet sitemap.xml; then
+            echo "No changes to sitemap.xml"
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "Sitemap has been updated"
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add sitemap.xml
+          git commit -m "chore: auto-update sitemap.xml [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Summary
+        run: |
+          if [ "${{ steps.check_changes.outputs.changed }}" == "true" ]; then
+            echo "✅ Sitemap updated and committed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ Sitemap unchanged, no commit needed" >> $GITHUB_STEP_SUMMARY
+          fi

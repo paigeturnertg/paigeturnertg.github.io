@@ -809,7 +809,7 @@ h4 {
   color: var(--color-white);
   border-color: var(--color-teal);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(29, 75, 68, 0.4);
+  box-shadow: 0 6px 20px rgba(29, 75, 68, 0.4), 0 0 20px rgba(196, 169, 98, 0.3);
 }
 
 .btn--secondary {
@@ -822,7 +822,7 @@ h4 {
   background: linear-gradient(135deg, var(--color-auburn) 0%, var(--color-auburn-light) 100%);
   color: var(--color-white);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(155, 61, 43, 0.3);
+  box-shadow: 0 4px 15px rgba(155, 61, 43, 0.3), 0 0 20px rgba(196, 169, 98, 0.3);
 }
 
 .btn--rose {
@@ -833,7 +833,7 @@ h4 {
 
 .btn--rose:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(196, 125, 125, 0.4);
+  box-shadow: 0 6px 20px rgba(196, 125, 125, 0.4), 0 0 20px rgba(196, 169, 98, 0.3);
 }
 
 .btn--small {
@@ -1255,7 +1255,7 @@ h4 {
 .connect .btn--secondary:hover {
   background: var(--color-cream);
   color: var(--color-teal);
-  box-shadow: 0 6px 20px rgba(251, 248, 241, 0.3);
+  box-shadow: 0 6px 20px rgba(251, 248, 241, 0.3), 0 0 20px rgba(196, 169, 98, 0.4);
 }
 
 /* Newsletter Signup Form */
@@ -1267,7 +1267,7 @@ h4 {
 
 .connect__newsletter-text {
   color: rgba(251, 248, 241, 0.85);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   margin-bottom: var(--space-lg);
   line-height: 1.6;
 }

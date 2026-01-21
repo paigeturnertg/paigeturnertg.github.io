@@ -156,22 +156,63 @@
     </div>
   </section>
 
-  <!-- Journal Section -->
-  <section class="journal">
-    <div class="journal__container">
-      <div class="journal__header">
-        <h2 class="journal__title">The Latest From Paige</h2>
-        <a href="blog.html" class="journal__view-all">Read all entries →</a>
-      </div>
+  <!-- Updates Section (Journal + Reviews) -->
+  <section class="updates">
+    <div class="updates__container">
+      <div class="updates__grid">
 
-      <a href="blog/2026-01-19-site-redesign.html" class="journal-card">
-        <time class="journal-card__date" datetime="2026-01-19">January 19, 2026</time>
-        <h3 class="journal-card__title">Time for a Makeover!</h3>
-        <p class="journal-card__excerpt">
-          The old design was at least a couple months old, so it was time for a new one, right?
-        </p>
-        <span class="journal-card__link">Keep reading</span>
-      </a>
+        <!-- Latest Blog Post -->
+        <div class="updates__column">
+          <div class="updates__header">
+            <h2 class="updates__title">The Latest From Paige</h2>
+            <a href="blog.html" class="updates__view-all">Read all entries →</a>
+          </div>
+
+          <a href="blog/2026-01-19-site-redesign.html" class="journal-card">
+            <time class="journal-card__date" datetime="2026-01-19">January 19, 2026</time>
+            <h3 class="journal-card__title">Time for a Makeover!</h3>
+            <p class="journal-card__excerpt">
+              The old design was at least a couple months old, so it was time for a new one, right?
+            </p>
+            <span class="journal-card__link">Keep reading</span>
+          </a>
+        </div>
+
+        <!-- Reader Reviews -->
+        <div class="updates__column">
+          <div class="updates__header">
+            <h2 class="updates__title">What Readers Say</h2>
+            <button class="updates__pause-btn" aria-label="Pause review rotation">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="10" y1="15" x2="10" y2="9"></line>
+                <line x1="14" y1="15" x2="14" y2="9"></line>
+              </svg>
+            </button>
+          </div>
+
+          <div class="review-card" aria-live="polite">
+            <div class="review-card__content">
+              <div class="review-card__quote-mark">✦</div>
+              <blockquote class="review-card__quote">
+                Loading reviews...
+              </blockquote>
+              <div class="review-card__attribution">
+                <p class="review-card__reviewer">—</p>
+                <p class="review-card__story">on <span class="review-card__story-title">—</span></p>
+              </div>
+              <div class="review-card__indicators">
+                <span class="review-indicator" data-index="0"></span>
+                <span class="review-indicator" data-index="1"></span>
+                <span class="review-indicator" data-index="2"></span>
+                <span class="review-indicator" data-index="3"></span>
+                <span class="review-indicator" data-index="4"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 

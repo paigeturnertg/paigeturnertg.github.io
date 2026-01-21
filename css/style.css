@@ -932,8 +932,89 @@ h4 {
 }
 
 /* --------------------------------------------
-   Journal Section
+   Updates Section (Journal + Reviews)
    -------------------------------------------- */
+.updates {
+  background-color: var(--color-white);
+  padding: var(--space-xl) 0 var(--space-3xl);
+  box-shadow: 0 2px 20px rgba(45, 42, 38, 0.04);
+  position: relative;
+}
+
+.updates__container {
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.updates__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+}
+
+.updates__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.updates__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.updates__title {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: var(--text-3xl);
+  margin: 0;
+}
+
+.updates__view-all {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-auburn);
+  transition: all var(--transition-base);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.updates__view-all:hover {
+  color: var(--color-auburn-light);
+  transform: translateX(4px);
+}
+
+.updates__pause-btn {
+  background: none;
+  border: 2px solid var(--color-rose-light);
+  border-radius: var(--radius-full);
+  color: var(--color-rose);
+  cursor: pointer;
+  padding: var(--space-xs) var(--space-sm);
+  transition: all var(--transition-base);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--text-sm);
+}
+
+.updates__pause-btn:hover {
+  background-color: var(--color-rose-muted);
+  border-color: var(--color-rose);
+  transform: scale(1.05);
+}
+
+.updates__pause-btn.is-paused {
+  background-color: var(--color-rose);
+  color: var(--color-white);
+}
+
+/* Keep legacy journal class for compatibility */
 .journal {
   background-color: var(--color-white);
   padding: var(--space-xl) 0 var(--space-3xl);
@@ -1051,6 +1132,107 @@ h4 {
 .journal-card__link:hover::after {
   content: '⟶';
   transform: translateX(4px);
+}
+
+/* --------------------------------------------
+   Review Card
+   -------------------------------------------- */
+.review-card {
+  display: block;
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-xl);
+  transition: all var(--transition-base);
+  border: 1px solid var(--color-cream-dark);
+  min-height: 280px;
+  position: relative;
+}
+
+.review-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+  border-color: var(--color-rose-light);
+}
+
+.review-card__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  opacity: 1;
+  transition: opacity var(--transition-slow);
+}
+
+.review-card__content.is-fading {
+  opacity: 0;
+}
+
+.review-card__quote-mark {
+  font-size: var(--text-4xl);
+  color: var(--color-rose-light);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+  opacity: 0.6;
+}
+
+.review-card__quote {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: var(--text-xl);
+  line-height: 1.6;
+  color: var(--color-teal);
+  margin: 0 0 var(--space-lg);
+  flex-grow: 1;
+}
+
+.review-card__attribution {
+  margin-top: auto;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-cream-dark);
+}
+
+.review-card__reviewer {
+  font-weight: 600;
+  color: var(--color-charcoal);
+  font-size: var(--text-base);
+  margin-bottom: var(--space-xs);
+}
+
+.review-card__story {
+  font-size: var(--text-sm);
+  color: var(--color-gray);
+}
+
+.review-card__story-title {
+  color: var(--color-rose);
+  font-weight: 600;
+}
+
+.review-card__indicators {
+  display: flex;
+  gap: var(--space-xs);
+  justify-content: center;
+  margin-top: var(--space-lg);
+}
+
+.review-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-cream-dark);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.review-indicator:hover {
+  background-color: var(--color-rose-light);
+  transform: scale(1.2);
+}
+
+.review-indicator.is-active {
+  background-color: var(--color-rose);
+  width: 24px;
+  border-radius: var(--radius-full);
 }
 
 /* --------------------------------------------
@@ -2223,6 +2405,13 @@ h4 {
 
   .btn-group {
     justify-content: flex-start;
+  }
+
+  /* Two-column layout for updates section */
+  .updates__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: start;
   }
 
   .error-404__number {

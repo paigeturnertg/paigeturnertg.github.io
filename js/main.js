@@ -309,6 +309,168 @@
   }
 
   // --------------------------------------------
+  // Review Rotation
+  // --------------------------------------------
+  function initReviewRotation() {
+    const reviewCard = document.querySelector('.review-card');
+    if (!reviewCard) return;
+
+    const reviewContent = reviewCard.querySelector('.review-card__content');
+    const quoteElement = reviewCard.querySelector('.review-card__quote');
+    const reviewerElement = reviewCard.querySelector('.review-card__reviewer');
+    const storyTitleElement = reviewCard.querySelector('.review-card__story-title');
+    const indicators = reviewCard.querySelectorAll('.review-indicator');
+    const pauseBtn = document.querySelector('.updates__pause-btn');
+
+    let reviews = [];
+    let currentIndex = 0;
+    let rotationInterval = null;
+    let isPaused = false;
+
+    // Fetch reviews from JSON
+    async function fetchReviews() {
+      try {
+        const response = await fetch('data/reviews.json');
+        if (!response.ok) throw new Error('Failed to fetch reviews');
+        const data = await response.json();
+        reviews = data.reviews;
+
+        if (reviews.length > 0) {
+          displayReview(0);
+          startRotation();
+        }
+      } catch (error) {
+        console.error('Error loading reviews:', error);
+        quoteElement.textContent = 'Unable to load reviews at this time.';
+      }
+    }
+
+    // Display a specific review
+    function displayReview(index) {
+      if (!reviews[index]) return;
+
+      const review = reviews[index];
+
+      // Fade out
+      reviewContent.classList.add('is-fading');
+
+      setTimeout(function() {
+        // Update content
+        quoteElement.textContent = `"${review.quote}"`;
+        reviewerElement.textContent = `— ${review.reviewer}`;
+        storyTitleElement.textContent = review.storyTitle;
+
+        // Update indicators
+        indicators.forEach(function(indicator, i) {
+          indicator.classList.toggle('is-active', i === index);
+        });
+
+        // Fade in
+        reviewContent.classList.remove('is-fading');
+      }, 300);
+
+      currentIndex = index;
+    }
+
+    // Start automatic rotation
+    function startRotation() {
+      if (isPaused || reviews.length <= 1) return;
+
+      rotationInterval = setInterval(function() {
+        const nextIndex = (currentIndex + 1) % reviews.length;
+        displayReview(nextIndex);
+      }, 12000); // 12 seconds
+    }
+
+    // Stop rotation
+    function stopRotation() {
+      if (rotationInterval) {
+        clearInterval(rotationInterval);
+        rotationInterval = null;
+      }
+    }
+
+    // Toggle pause/play
+    function togglePause() {
+      isPaused = !isPaused;
+
+      if (isPaused) {
+        stopRotation();
+        pauseBtn.classList.add('is-paused');
+        pauseBtn.setAttribute('aria-label', 'Resume review rotation');
+
+        // Update icon to play symbol
+        pauseBtn.querySelector('svg').innerHTML = `
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="10 8 16 12 10 16 10 8"></polygon>
+        `;
+      } else {
+        startRotation();
+        pauseBtn.classList.remove('is-paused');
+        pauseBtn.setAttribute('aria-label', 'Pause review rotation');
+
+        // Update icon back to pause symbol
+        pauseBtn.querySelector('svg').innerHTML = `
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="10" y1="15" x2="10" y2="9"></line>
+          <line x1="14" y1="15" x2="14" y2="9"></line>
+        `;
+      }
+    }
+
+    // Pause button click
+    if (pauseBtn) {
+      pauseBtn.addEventListener('click', togglePause);
+    }
+
+    // Indicator clicks for manual navigation
+    indicators.forEach(function(indicator, index) {
+      indicator.addEventListener('click', function() {
+        stopRotation();
+        displayReview(index);
+        if (!isPaused) {
+          startRotation();
+        }
+      });
+    });
+
+    // Pause on hover (accessibility & UX)
+    reviewCard.addEventListener('mouseenter', function() {
+      if (!isPaused) {
+        stopRotation();
+      }
+    });
+
+    reviewCard.addEventListener('mouseleave', function() {
+      if (!isPaused) {
+        startRotation();
+      }
+    });
+
+    // Pause when tab is not visible
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        stopRotation();
+      } else if (!isPaused) {
+        startRotation();
+      }
+    });
+
+    // Respect prefers-reduced-motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      stopRotation();
+      isPaused = true;
+      if (pauseBtn) {
+        pauseBtn.style.display = 'none';
+      }
+    }
+
+    // Initialize
+    fetchReviews();
+  }
+
+  // --------------------------------------------
   // Initialize Everything
   // --------------------------------------------
   function init() {
@@ -320,6 +482,7 @@
     initDynamicHeader();
     initBackToTop();
     initLightbox();
+    initReviewRotation();
   }
 
   // Run on DOM ready

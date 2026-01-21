@@ -1,0 +1,54 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "quote": "The psychological depth in this story is absolutely masterful. I couldn't stop reading until 3am.",
+      "reviewer": "Anonymous Reader",
+      "storyTitle": "Highway to Elle",
+      "source": {
+        "platform": "Fiction Mania",
+        "url": "#"
+      }
+    },
+    {
+      "id": 2,
+      "quote": "Paige has this incredible talent for making you empathize with characters even as they're trapped in impossible situations.",
+      "reviewer": "Sarah M.",
+      "storyTitle": "Yvonne Girl",
+      "source": {
+        "platform": "BigCloset",
+        "url": "#"
+      }
+    },
+    {
+      "id": 3,
+      "quote": "The slow build is *chef's kiss*. You don't even realize how far you've fallen until it's too late—just like the protagonist.",
+      "reviewer": "TG_Fiction_Fan",
+      "storyTitle": "Hexed Holidays",
+      "source": {
+        "platform": "Discord",
+        "url": "#"
+      }
+    },
+    {
+      "id": 4,
+      "quote": "I've been reading transformation fiction for 20 years and this is some of the best character work I've encountered.",
+      "reviewer": "A Long-Time Reader",
+      "storyTitle": "Highway to Elle",
+      "source": {
+        "platform": "Fiction Mania",
+        "url": "#"
+      }
+    },
+    {
+      "id": 5,
+      "quote": "The way Paige writes the 'point of no return' moment is absolutely devastating. I had to take a break to process it.",
+      "reviewer": "Jamie K.",
+      "storyTitle": "Yvonne Girl",
+      "source": {
+        "platform": "BigCloset",
+        "url": "#"
+      }
+    }
+  ]
+}

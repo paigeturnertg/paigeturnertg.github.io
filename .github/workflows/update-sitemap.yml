@@ -1,7 +1,7 @@
 name: Update Sitemap
 
 # Trigger the workflow on:
-# - Push to main branch
+# - Push to main branch (specifically when HTML or the script changes)
 # - Manual workflow dispatch
 # - Schedule (weekly on Sundays at midnight UTC)
 on:
@@ -13,7 +13,13 @@ on:
       - 'generate-sitemap.py'
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 0'  # Weekly on Sundays at midnight UTC
+    - cron: '0 0 * * 0'
+
+# PREVENT CONFLICTS: This ensures that if a site deployment and a sitemap 
+# update happen at once, they don't cancel each other out.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   update-sitemap:
@@ -26,7 +32,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Fetch all history for accurate last-modified dates
+          fetch-depth: 0
+
+      # DELAY: We wait 60 seconds to let the main GitHub Pages 
+      # deployment finish before we push the sitemap update.
+      - name: Wait for main deployment
+        run: sleep 60
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -55,6 +66,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add sitemap.xml
+          # [skip ci] prevents this commit from starting another workflow loop
           git commit -m "chore: auto-update sitemap.xml [skip ci]"
           git push
         env:

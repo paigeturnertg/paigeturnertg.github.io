@@ -33,7 +33,7 @@
   /* Neutrals - warmer cream tones */
   --color-cream: #FBF8F1;
   --color-cream-dark: #F3EDE3;
-  --color-cream-pink: #FEF5F7;
+  --color-cream-pink: #fff4f8;
   --color-white: #FFFFFF;
   --color-charcoal: #2D2A26;
   --color-gray: #6B6561;
@@ -372,7 +372,7 @@ h4 {
 }
 
 .section {
-  padding: var(--space-3xl) 0;
+  padding: var(--space-2xl) 0;
 }
 
 .section--alt {
@@ -1610,7 +1610,7 @@ h4 {
    Library Page
    -------------------------------------------- */
 .library {
-  padding: var(--space-3xl) 0;
+  padding: var(--space-xl) 0;
   background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-pink) 100%);
 }
 
@@ -1696,7 +1696,7 @@ h4 {
    Work Page (Cover + TOC)
    -------------------------------------------- */
 .work-header {
-  padding: var(--space-3xl) 0;
+  padding: var(--space-2xl) 0;
   background: linear-gradient(180deg, var(--color-white) 0%, var(--color-cream-pink) 100%);
 }
 
@@ -2014,7 +2014,7 @@ h4 {
    -------------------------------------------- */
 .page-header {
   background: linear-gradient(180deg, var(--color-white) 0%, var(--color-cream-pink) 100%);
-  padding: var(--space-2xl) 0;
+  padding: var(--space-xl) 0;
   text-align: center;
   border-bottom: 1px solid var(--color-cream-dark);
 }

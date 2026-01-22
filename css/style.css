@@ -33,7 +33,7 @@
   /* Neutrals - warmer cream tones */
   --color-cream: #FBF8F1;
   --color-cream-dark: #F3EDE3;
-  --color-cream-pink: #FDF6F7;
+  --color-cream-pink: #FEF5F7;
   --color-white: #FFFFFF;
   --color-charcoal: #2D2A26;
   --color-gray: #6B6561;
@@ -572,9 +572,9 @@ h4 {
   position: absolute;
   top: 20%;
   right: -10%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, var(--color-rose-muted) 0%, transparent 70%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--color-rose-muted) 0%, transparent 80%);
   pointer-events: none;
 }
 

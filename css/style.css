@@ -403,7 +403,7 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-sm) var(--space-lg);
+  padding: var(--space-xs) var(--space-lg);
   max-width: var(--max-width-wide);
   margin: 0 auto;
 }
@@ -560,8 +560,8 @@ h4 {
    Hero Section - More Whimsical
    -------------------------------------------- */
 .hero {
-  padding: var(--space-2xl) 0 var(--space-4xl);
-  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-pink) 100%);
+  padding: var(--space-xl) 0 var(--space-2xl);
+  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream) 15%, var(--color-cream-pink) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -885,8 +885,8 @@ h4 {
    Bio Section - More Personality
    -------------------------------------------- */
 .bio {
-  background-color: var(--color-cream);
-  padding: var(--space-xl) 0 var(--space-3xl);
+  background: linear-gradient(180deg, var(--color-cream-pink) 0%, var(--color-white) 50%, var(--color-cream-pink) 100%);
+  padding: var(--space-md) 0 var(--space-xl);
   position: relative;
   box-shadow: 0 2px 20px rgba(45, 42, 38, 0.04);
 }
@@ -936,7 +936,7 @@ h4 {
    -------------------------------------------- */
 .journal {
   background-color: var(--color-white);
-  padding: var(--space-xl) 0 var(--space-3xl);
+  padding: var(--space-md) 0 var(--space-xl);
   box-shadow: 0 2px 20px rgba(45, 42, 38, 0.04);
   position: relative;
 }
@@ -951,7 +951,7 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
   flex-wrap: wrap;
   gap: var(--space-md);
 }
@@ -1057,15 +1057,15 @@ h4 {
    Featured Works Section
    -------------------------------------------- */
 .featured {
-  padding: var(--space-xl) 0 var(--space-3xl);
-  background: linear-gradient(180deg, var(--color-cream-pink) 0%, var(--color-white) 50%, var(--color-cream-pink) 100%);
+  padding: var(--space-md) 0 var(--space-xl);
+  background-color: var(--color-cream);
   box-shadow: 0 -2px 20px rgba(45, 42, 38, 0.04), 0 2px 20px rgba(45, 42, 38, 0.04);
   position: relative;
 }
 
 .featured__header {
   text-align: center;
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-lg);
 }
 
 .featured__title {

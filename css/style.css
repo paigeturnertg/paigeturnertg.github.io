@@ -346,6 +346,16 @@ h4 {
   100% { background-position: 200% center; }
 }
 
+/* Hero photo entrance rotation */
+@keyframes heroRotate {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(0deg); }
+  40% { transform: rotate(2deg); }
+  60% { transform: rotate(2deg); }
+  80% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
 /* Envelope open animation */
 @keyframes envelopeOpen {
   0% { transform: rotateX(0deg); }
@@ -626,6 +636,7 @@ h4 {
   position: relative;
   z-index: 1;
   transition: all var(--transition-slow);
+  animation: heroRotate 2.5s ease-in-out 0.6s 1;
 }
 
 /* Slight rotation on hover */
@@ -633,8 +644,8 @@ h4 {
   transform: rotate(2deg);
   box-shadow:
     var(--shadow-lg),
-    0 0 60px rgba(196, 125, 125, 0.25),
-    0 0 100px rgba(196, 169, 98, 0.15);
+    0 0 60px rgba(196, 125, 125, 0.375),
+    0 0 100px rgba(196, 169, 98, 0.225);
 }
 
 .hero__image-wrapper:hover::before {
@@ -2285,6 +2296,12 @@ h4 {
   .about__container {
     grid-template-columns: auto 1fr;
     align-items: start;
+  }
+
+  .about__image-wrapper {
+    position: sticky;
+    top: var(--space-2xl);
+    align-self: start;
   }
 }
 

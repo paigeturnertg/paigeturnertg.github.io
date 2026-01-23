@@ -123,6 +123,20 @@
         }
       });
     });
+
+    // Handle hash in URL on page load
+    if (window.location.hash) {
+      // Use setTimeout to ensure page is fully loaded
+      setTimeout(function() {
+        const targetElement = document.querySelector(window.location.hash);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    }
   }
 
   // --------------------------------------------

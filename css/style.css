@@ -2069,6 +2069,48 @@ h4 {
   text-align: center;
 }
 
+.library-jump-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+}
+
+.library-jump-nav__label {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-gray);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.library-jump-nav__btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-teal);
+  text-decoration: none;
+  padding: var(--space-xs) var(--space-md);
+  border: 1.5px solid var(--color-teal-light);
+  border-radius: var(--radius-full);
+  background: transparent;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.library-jump-nav__btn:hover {
+  background-color: var(--color-teal);
+  color: var(--color-white);
+  border-color: var(--color-teal);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(29, 75, 68, 0.25);
+}
+
 /* --------------------------------------------
    404 Error Page
    -------------------------------------------- */

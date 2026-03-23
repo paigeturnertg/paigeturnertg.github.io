@@ -120,8 +120,10 @@ def generate_sitemap(html_files: List[str], output_file: str = "sitemap.xml") ->
 
             # Convert file path to URL
             url_path = file_path.replace("\\", "/").replace(".html", "")
-            if url_path == "index.html":
+            if url_path == "index":
                 url_path = ""
+            elif url_path.endswith("/index"):
+                url_path = url_path[:-5] # Removes 'index' but keeps the trailing slash
 
             url_data = {
                 "loc": f"{BASE_URL}/{url_path}",

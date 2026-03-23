@@ -1645,6 +1645,7 @@ h4 {
   max-width: var(--max-width-wide);
   margin: 0 auto var(--space-3xl);
   padding: 0 var(--space-lg);
+  scroll-margin-top: 5rem;
 }
 
 .library__section-heading {

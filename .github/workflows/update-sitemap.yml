@@ -5,15 +5,19 @@ name: Update Sitemap
 # - Manual workflow dispatch
 # - Schedule (weekly on Sundays at midnight UTC)
 on:
+  # Runs once a day at midnight UTC (Better for Google's stability)
+  schedule:
+    - cron: '0 0 * * *'
+  
+  # Allows you to manually trigger it from the GitHub "Actions" tab
+  workflow_dispatch:
+
+  # Only run on push if you actually change the generator script itself
   push:
     branches:
       - main
     paths:
-      - '**.html'
       - 'generate-sitemap.py'
-  workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * 0'
 
 # PREVENT CONFLICTS: This ensures that if a site deployment and a sitemap 
 # update happen at once, they don't cancel each other out.

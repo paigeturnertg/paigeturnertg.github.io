@@ -119,7 +119,7 @@ def generate_sitemap(html_files: List[str], output_file: str = "sitemap.xml") ->
             last_mod = get_file_last_modified(file_path)
 
             # Convert file path to URL
-            url_path = file_path.replace("\\", "/")
+            url_path = file_path.replace("\\", "/").replace(".html", "")
             if url_path == "index.html":
                 url_path = ""
 
@@ -149,7 +149,7 @@ def generate_sitemap(html_files: List[str], output_file: str = "sitemap.xml") ->
                 for entry in entries:
                     f.write("  <url>\n")
                     f.write(f"    <loc>{entry['loc']}</loc>\n")
-                    f.write(f"    <lastmod>{entry['lastmod']}</lastmod>\n")
+                    # f.write(f"    <lastmod>{entry['lastmod']}</lastmod>\n") <--trying to fix google indexing issue
                     f.write(f"    <priority>{entry['priority']}</priority>\n")
                     f.write(f"    <changefreq>{entry['changefreq']}</changefreq>\n")
                     f.write("  </url>\n")

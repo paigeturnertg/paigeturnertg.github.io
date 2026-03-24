@@ -73,6 +73,11 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://paigeturnertg.github.io/blog/2026-03-23-forging-ahead</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
   <!-- Work Indexes -->
   <url>

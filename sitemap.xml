@@ -96,6 +96,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://paigeturnertg.github.io/works/career-day/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://paigeturnertg.github.io/works/effortless-beauty/</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
@@ -159,6 +164,11 @@
   </url>
   <url>
     <loc>https://paigeturnertg.github.io/works/effortless-beauty/chapter-4</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://paigeturnertg.github.io/works/escape-from-pleasant-island/chapter-1</loc>
     <priority>0.6</priority>
     <changefreq>yearly</changefreq>
   </url>

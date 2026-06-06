@@ -193,6 +193,11 @@
     <changefreq>yearly</changefreq>
   </url>
   <url>
+    <loc>https://paigeturnertg.github.io/works/forging-the-phis/chapter-5</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
     <loc>https://paigeturnertg.github.io/works/forging-the-phis/prologue</loc>
     <priority>0.6</priority>
     <changefreq>yearly</changefreq>

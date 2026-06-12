@@ -404,11 +404,7 @@
     }
 
     function applyTheme(theme) {
-      if (theme === 'dark') {
-        html.setAttribute('data-theme', 'dark');
-      } else {
-        html.removeAttribute('data-theme');
-      }
+      html.setAttribute('data-theme', theme);
     }
 
     function updateButton(btn, theme) {

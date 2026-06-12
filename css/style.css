@@ -2707,23 +2707,41 @@ h4 {
    -------------------------------------------- */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-cream:       #1A1714;
-    --color-cream-dark:  #222019;
-    --color-cream-pink:  #1E1A1C;
-    --color-white:       #252220;
+    /* Backgrounds — more differentiated */
+    --color-cream:        #1A1714;
+    --color-cream-dark:   #221E1A;  /* NEW — slightly more visible */
+    --color-cream-pink:   #1E1520;  /* NEW — real rose tint */
+    --color-white:        #2C2722;  /* NEW — more contrast for cards */
+
+    /* Foreground accents — the critical fixes */
+    --color-teal:         #5BAAA0;  /* NEW — readable on dark bg */
+    --color-teal-light:   #6DBDB3;  /* NEW */
+    --color-auburn:       #D06A52;  /* NEW — was #9B3D2B, 2.2:1 → 5.1:1 */
+    --color-auburn-light: #E07D66;  /* NEW */
+
+    /* Shadows — keep as-is */
+    --shadow-sm:         0 2px 4px rgba(0,0,0,0.35);
+    --shadow-md:         0 4px 16px rgba(0,0,0,0.5);
+    --shadow-lg:         0 8px 32px rgba(0,0,0,0.6);
+    --shadow-card:       0 2px 12px rgba(0,0,0,0.4);
+    --shadow-card-hover: 0 16px 40px rgba(0,0,0,0.65);
+
+    /* Text */
     --color-charcoal:    #E8E3D8;
     --color-gray:        #9A928A;
     --color-gray-light:  #756F68;
-
-    --shadow-sm:         0 2px 4px rgba(0, 0, 0, 0.35);
-    --shadow-md:         0 4px 16px rgba(0, 0, 0, 0.5);
-    --shadow-lg:         0 8px 32px rgba(0, 0, 0, 0.6);
-    --shadow-card:       0 2px 12px rgba(0, 0, 0, 0.4);
-    --shadow-card-hover: 0 16px 40px rgba(0, 0, 0, 0.65);
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    color: #5BAAA0;
+  /* Pin nav/footer/connect backgrounds — they should stay dark teal
+     even though --color-teal is now remapped to a light value */
+  .nav {                                                       /* NEW */
+    background: linear-gradient(135deg, #1D4B44 0%, #153832 100%) !important;
+  }
+  .connect {                                                    /* NEW */
+    background: linear-gradient(135deg, #1D4B44 0%, #153832 100%) !important;
+  }
+  .footer {                                                     /* NEW */
+    background: linear-gradient(135deg, #122D28 0%, #0E2420 100%) !important;
   }
 
   .hero__title {

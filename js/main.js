@@ -340,6 +340,51 @@
   }
 
   // --------------------------------------------
+  // Reading Progress Bar (Chapter Pages)
+  // --------------------------------------------
+  function initReadingProgress() {
+    if (!document.querySelector('.chapter__content')) return;
+
+    var bar = document.createElement('div');
+    bar.className = 'reading-progress';
+    document.body.prepend(bar);
+
+    function updateProgress() {
+      var scrollTop = window.scrollY;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      bar.style.width = progress + '%';
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  // --------------------------------------------
+  // Scroll Position Persistence (Chapter Pages)
+  // --------------------------------------------
+  function initScrollPersistence() {
+    if (!document.querySelector('.chapter__content')) return;
+
+    var key = 'scroll:' + window.location.pathname;
+
+    // Restore saved position after page animation settles
+    var saved = localStorage.getItem(key);
+    if (saved) {
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          window.scrollTo(0, parseInt(saved, 10));
+        }, 500);
+      });
+    }
+
+    // Save position on scroll (throttled)
+    window.addEventListener('scroll', throttle(function() {
+      localStorage.setItem(key, window.scrollY);
+    }, 500), { passive: true });
+  }
+
+  // --------------------------------------------
   // Initialize Everything
   // --------------------------------------------
   function init() {
@@ -351,6 +396,8 @@
     initDynamicHeader();
     initBackToTop();
     initLightbox();
+    initReadingProgress();
+    initScrollPersistence();
   }
 
   // Handle hash navigation early (before page fully loads)

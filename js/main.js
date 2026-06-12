@@ -385,9 +385,69 @@
   }
 
   // --------------------------------------------
+  // Light / Dark Mode Toggle
+  // --------------------------------------------
+  function initThemeToggle() {
+    var STORAGE_KEY = 'pt-theme';
+    var html = document.documentElement;
+
+    // Sun icon (light mode indicator) and moon icon (dark mode indicator)
+    var SUN_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 12 4.5ZM18.364 6.343a.75.75 0 0 1 0 1.06l-1.06 1.061a.75.75 0 1 1-1.06-1.06l1.06-1.061a.75.75 0 0 1 1.06 0ZM19.5 12a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5a.75.75 0 0 1 .75.75Zm-2.136 5.657a.75.75 0 0 1-1.06 0l-1.061-1.06a.75.75 0 0 1 1.06-1.061l1.061 1.06a.75.75 0 0 1 0 1.061ZM12 17.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V18a.75.75 0 0 1 .75-.75ZM7.757 16.757a.75.75 0 0 1 0-1.06l1.06-1.061a.75.75 0 0 1 1.06 1.06l-1.06 1.061a.75.75 0 0 1-1.06 0ZM4.5 12a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5A.75.75 0 0 1 4.5 12Zm2.136-5.657a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061L6.636 7.404a.75.75 0 0 1 0-1.061ZM12 8.25a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5Z"/></svg>';
+    var MOON_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"/></svg>';
+
+    function getStoredTheme() {
+      return localStorage.getItem(STORAGE_KEY);
+    }
+
+    function getSystemTheme() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function applyTheme(theme) {
+      html.setAttribute('data-theme', theme);
+    }
+
+    function updateButton(btn, theme) {
+      if (theme === 'dark') {
+        btn.innerHTML = SUN_SVG;
+        btn.setAttribute('aria-label', 'Switch to light mode');
+        btn.title = 'Switch to light mode';
+      } else {
+        btn.innerHTML = MOON_SVG;
+        btn.setAttribute('aria-label', 'Switch to dark mode');
+        btn.title = 'Switch to dark mode';
+      }
+    }
+
+    // Apply saved or system theme immediately (before paint)
+    var initialTheme = getStoredTheme() || getSystemTheme();
+    applyTheme(initialTheme);
+
+    // Create and inject the button
+    var btn = document.createElement('button');
+    btn.className = 'nav__theme-toggle';
+    btn.type = 'button';
+    updateButton(btn, initialTheme);
+
+    var overlay = document.querySelector('.nav__overlay');
+    if (overlay) {
+      overlay.parentNode.insertBefore(btn, overlay);
+    }
+
+    btn.addEventListener('click', function() {
+      var current = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      var next = current === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      updateButton(btn, next);
+      localStorage.setItem(STORAGE_KEY, next);
+    });
+  }
+
+  // --------------------------------------------
   // Initialize Everything
   // --------------------------------------------
   function init() {
+    initThemeToggle();
     initMobileNav();
     initChapterNav();
     initSmoothScroll();

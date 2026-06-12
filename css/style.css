@@ -94,6 +94,49 @@
 }
 
 /* --------------------------------------------
+   Dark Theme Overrides
+   -------------------------------------------- */
+[data-theme="dark"] {
+  --color-cream: #1C1917;
+  --color-cream-dark: #242019;
+  --color-cream-pink: #1F191D;
+  --color-white: #2A2622;
+  --color-charcoal: #EAE4D8;
+  --color-gray: #A8A09A;
+  --color-gray-light: #6E6760;
+  --color-teal-muted: rgba(100, 180, 165, 0.12);
+  --color-auburn-muted: rgba(200, 110, 90, 0.12);
+  --color-rose-muted: rgba(210, 150, 150, 0.12);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.25);
+  --shadow-card-hover: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] body {
+  color: var(--color-charcoal);
+  background-color: var(--color-cream);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: var(--color-gold-light);
+}
+
+[data-theme="dark"] a {
+  color: var(--color-rose-light);
+}
+
+[data-theme="dark"] a:hover {
+  color: var(--color-rose);
+}
+
+/* --------------------------------------------
    CSS Reset & Base Styles
    -------------------------------------------- */
 *, *::before, *::after {
@@ -564,6 +607,44 @@ h4 {
 
 .nav__toggle.is-active .nav__toggle-icon::after {
   transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Theme Toggle Button */
+.nav__theme-toggle {
+  background: none;
+  border: 1px solid rgba(196, 169, 98, 0.4);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.nav__theme-toggle:hover {
+  background: rgba(196, 169, 98, 0.15);
+  border-color: var(--color-gold);
+  box-shadow: 0 0 8px rgba(196, 169, 98, 0.3);
+}
+
+.nav__theme-toggle:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.nav__theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: transform var(--transition-base);
+}
+
+.nav__theme-toggle:hover svg {
+  transform: rotate(20deg);
 }
 
 /* --------------------------------------------

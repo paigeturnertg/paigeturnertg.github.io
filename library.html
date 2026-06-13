@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>(function(){var t=localStorage.getItem("pt-theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);})()</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Browse transformation fiction by Paige Turner - novels, short stories, and series">
 
@@ -58,7 +59,7 @@
       <span class="library-jump-nav__label">Jump to:</span>
       <a href="#novels-series" class="library-jump-nav__btn">Novels &amp; Series</a>
       <a href="#short-stories" class="library-jump-nav__btn">Short Stories</a>
-      <a href="#flash-fiction" class="library-jump-nav__btn">Flash Fiction</a>
+      <a href="#flash-fiction" class="library-jump-nav__btn">One-Shots, Flash Fiction, and Comics</a>
     </nav>
 
     <!-- Section: Novels & Series -->
@@ -216,8 +217,42 @@
 
     <!-- Section: Flash Fiction -->
     <section class="library__section" id="flash-fiction">
-      <h2 class="library__section-heading">Flash Fiction</h2>
+      <h2 class="library__section-heading">One-Shots, Flash Fiction, and Comics</h2>
       <div class="library__grid">
+
+        <!-- Work Card: Career Day! -->
+        <a href="works/career-day/index.html" class="work-card">
+          <div class="work-card__image">
+            <img src="images/works/Career-Cover.jpg" alt="Career Day! Cover" loading="lazy">
+          </div>
+          <div class="work-card__content">
+            <span class="work-card__tag">Comic</span>
+            <h3 class="work-card__title">Career Day!</h3>
+            <p style="font-size: var(--text-xs); color: var(--color-rose); margin-bottom: var(--space-sm); font-weight: 500;">
+              #SciFi #AutoCloset #College
+            </p>
+            <p class="work-card__excerpt">
+              Don't know what you want to be yet? No problem! CareerSync's Vocational Alignment AutoCloset™ places every participant in a career that reflects their truest professional identity, whether they knew they had one or not.
+            </p>
+          </div>
+        </a>
+
+        <!-- Work Card: Escape From Pleasant Island -->
+        <a href="works/escape-from-pleasant-island/chapter-1.html" class="work-card">
+          <div class="work-card__image">
+            <img src="images/works/IslandCover.jpg" alt="Escape From Pleasant Island Cover" loading="lazy">
+          </div>
+          <div class="work-card__content">
+            <span class="work-card__tag">One-Shot</span>
+            <h3 class="work-card__title">Escape From Pleasant Island</h3>
+            <p style="font-size: var(--text-xs); color: var(--color-rose); margin-bottom: var(--space-sm); font-weight: 500;">
+              #Magical #Fairytale #Adventure
+            </p>
+            <p class="work-card__excerpt">
+              A retelling of Pinocchio's most infamous detour, written as a submission for the BCTS 2026 Summer Island Getaway Challenge. When Pinocchio runs away with a friend to Pleasant Island instead of coming home to become a real boy, he discovers the island has a very particular transformation in store for its visitors. And not everyone who escapes the island gets away clean.
+            </p>
+          </div>
+        </a>
 
         <!-- Work Card: The Life of a... -->
         <a href="works/the-life-of-a/part-1.html" class="work-card">
@@ -254,6 +289,16 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer__content">
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="library.html" class="footer__nav-link">Fiction Library</a>
+        <a href="blog.html" class="footer__nav-link">Author's Journal</a>
+        <a href="about.html" class="footer__nav-link">About Paige</a>
+        <a href="index.html#connect" class="footer__nav-link">Get in Touch</a>
+      </nav>
+      <div class="footer__contact">
+        <a href="mailto:paigeturnertg@gmail.com" class="footer__contact-link">paigeturnertg@gmail.com</a>
+        <a href="https://discord.gg/w8ne2f7nX8" target="_blank" rel="noopener noreferrer" class="footer__contact-link">Discord</a>
+      </div>
       <p class="footer__text">
         &copy; 2026 Paige Turner. Made with <span class="footer__heart">&hearts;</span> and entirely too much coffee.
       </p>

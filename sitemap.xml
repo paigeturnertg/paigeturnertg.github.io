@@ -83,10 +83,20 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://paigeturnertg.github.io/blog/2026-05-19-the-tropiest-trope</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
   <!-- Work Indexes -->
   <url>
     <loc>https://paigeturnertg.github.io/works/bffs/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://paigeturnertg.github.io/works/career-day/</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -158,6 +168,11 @@
     <changefreq>yearly</changefreq>
   </url>
   <url>
+    <loc>https://paigeturnertg.github.io/works/escape-from-pleasant-island/chapter-1</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
     <loc>https://paigeturnertg.github.io/works/forging-the-phis/chapter-1</loc>
     <priority>0.6</priority>
     <changefreq>yearly</changefreq>
@@ -169,6 +184,21 @@
   </url>
   <url>
     <loc>https://paigeturnertg.github.io/works/forging-the-phis/chapter-3</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://paigeturnertg.github.io/works/forging-the-phis/chapter-4</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://paigeturnertg.github.io/works/forging-the-phis/chapter-5</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://paigeturnertg.github.io/works/forging-the-phis/chapter-6</loc>
     <priority>0.6</priority>
     <changefreq>yearly</changefreq>
   </url>

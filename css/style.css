@@ -566,6 +566,44 @@ h4 {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* Theme Toggle Button */
+.nav__theme-toggle {
+  background: none;
+  border: 1px solid rgba(196, 169, 98, 0.4);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.nav__theme-toggle:hover {
+  background: rgba(196, 169, 98, 0.15);
+  border-color: var(--color-gold);
+  box-shadow: 0 0 8px rgba(196, 169, 98, 0.3);
+}
+
+.nav__theme-toggle:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.nav__theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: transform var(--transition-base);
+}
+
+.nav__theme-toggle:hover svg {
+  transform: rotate(20deg);
+}
+
 /* --------------------------------------------
    Hero Section - More Whimsical
    -------------------------------------------- */
@@ -987,6 +1025,13 @@ h4 {
 .journal__view-all:hover {
   color: var(--color-auburn-light);
   transform: translateX(4px);
+}
+
+/* Journal cards list container */
+.journal__cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
 }
 
 /* Journal Card - Simpler design without images */
@@ -2448,6 +2493,130 @@ h4 {
   }
 }
 
+/* --------------------------------------------
+   Reading Progress Bar (Chapter Pages)
+   -------------------------------------------- */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--color-gold) 0%, var(--color-rose) 100%);
+  z-index: 200;
+  transition: width 100ms linear;
+  pointer-events: none;
+}
+
+/* --------------------------------------------
+   Footer Navigation Links
+   -------------------------------------------- */
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xs) var(--space-xl);
+  margin-bottom: var(--space-md);
+}
+
+.footer__nav-link {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: var(--text-base);
+  color: var(--color-gold);
+  text-shadow:
+    0 1px 0 var(--color-gold-dark),
+    0 0 8px rgba(196, 169, 98, 0.2);
+  transition: color var(--transition-base);
+}
+
+.footer__nav-link:hover {
+  color: var(--color-gold-light);
+}
+
+.footer__contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xs) var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.footer__contact-link {
+  color: rgba(251, 248, 241, 0.55);
+  font-size: var(--text-sm);
+  transition: color var(--transition-fast);
+}
+
+.footer__contact-link:hover {
+  color: var(--color-rose-light);
+}
+
+/* --------------------------------------------
+   Work Index Layout (replaces inline styles)
+   -------------------------------------------- */
+.work-index {
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  padding: var(--space-3xl) var(--space-lg);
+}
+
+.work-index__grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.work-index__sticky {
+  position: sticky;
+  top: calc(var(--space-3xl) + 60px);
+}
+
+.work-index__cover-image {
+  width: 100%;
+  aspect-ratio: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.work-index__sticky .work-header__cover {
+  margin-bottom: var(--space-xl);
+}
+
+.work-index__btn {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.work-index__btn + .work-index__btn {
+  margin-top: var(--space-md);
+}
+
+.work-index__back {
+  text-align: center;
+  margin-top: var(--space-2xl);
+}
+
+.work-index__toc.toc {
+  padding: 0;
+}
+
+.work-index__toc-container.toc__container {
+  padding: 0;
+  max-width: none;
+}
+
+@media (max-width: 768px) {
+  .work-index__grid {
+    grid-template-columns: 1fr;
+  }
+  .work-index__sticky {
+    position: static;
+  }
+}
+
 /* Placeholder image styles */
 .placeholder-image {
   background: linear-gradient(135deg, var(--color-cream-dark) 0%, var(--color-cream-pink) 50%, var(--color-cream) 100%);
@@ -2555,4 +2724,159 @@ h4 {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+/* --------------------------------------------
+   Orphan Card Fix (2-col grid at tablet width)
+   When 3 items wrap to 2 cols, center the lone card.
+   -------------------------------------------- */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .featured__grid .work-card:last-child:nth-child(odd),
+  .library__grid .work-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - var(--space-xl) / 2);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* --------------------------------------------
+   Dark Mode
+   Variables and component overrides shared by:
+   - System dark preference (unless user forced light)
+   - User-forced dark via the toggle button
+   -------------------------------------------- */
+
+/* System preference — suppressed when user explicitly chose light */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    --color-cream:        #1A1714;
+    --color-cream-dark:   #221E1A;
+    --color-cream-pink:   #3b2f33;
+    --color-white:        #2C2722;
+    --color-teal:         #5BAAA0;
+    --color-teal-light:   #6DBDB3;
+    --color-auburn:       #D06A52;
+    --color-auburn-light: #E07D66;
+    --shadow-sm:         0 2px 4px rgba(0,0,0,0.35);
+    --shadow-md:         0 4px 16px rgba(0,0,0,0.5);
+    --shadow-lg:         0 8px 32px rgba(0,0,0,0.6);
+    --shadow-card:       0 2px 12px rgba(0,0,0,0.4);
+    --shadow-card-hover: 0 16px 40px rgba(0,0,0,0.65);
+    --color-charcoal:    #E8E3D8;
+    --color-gray:        #9A928A;
+    --color-gray-light:  #756F68;
+  }
+  html:not([data-theme="light"]) .nav {
+    background: linear-gradient(135deg, #1D4B44 0%, #153832 100%) !important;
+  }
+  html:not([data-theme="light"]) .connect {
+    background: linear-gradient(135deg, #1D4B44 0%, #153832 100%) !important;
+  }
+  html:not([data-theme="light"]) .footer {
+    background: linear-gradient(135deg, #122D28 0%, #0E2420 100%) !important;
+  }
+  html:not([data-theme="light"]) .hero__title {
+    background: linear-gradient(135deg, #4A9A90 0%, #6AC0B5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  html:not([data-theme="light"]) .work-card,
+  html:not([data-theme="light"]) .journal-card,
+  html:not([data-theme="light"]) .toc__list,
+  html:not([data-theme="light"]) .card {
+    border-color: rgba(255, 255, 255, 0.07);
+  }
+  html:not([data-theme="light"]) .chapter__header::after {
+    background-color: var(--color-cream);
+  }
+  html:not([data-theme="light"]) .chapter-nav-top {
+    background-color: var(--color-cream-dark);
+    border-bottom-color: rgba(255, 255, 255, 0.06);
+  }
+  html:not([data-theme="light"]) .chapter-nav__select {
+    background-color: var(--color-white);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: var(--color-charcoal);
+  }
+  html:not([data-theme="light"]) .blog-entry {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+  html:not([data-theme="light"]) .toc__item {
+    border-bottom-color: rgba(255, 255, 255, 0.07);
+  }
+  html:not([data-theme="light"]) .newsletter-form__input {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: var(--color-charcoal);
+  }
+  html:not([data-theme="light"]) .newsletter-form__input::placeholder {
+    color: var(--color-gray-light);
+  }
+}
+
+/* User-forced dark (overrides system light preference) */
+html[data-theme="dark"] {
+  --color-cream:        #1A1714;
+  --color-cream-dark:   #221E1A;
+  --color-cream-pink:   #3b2f33;
+  --color-white:        #2C2722;
+  --color-teal:         #5BAAA0;
+  --color-teal-light:   #6DBDB3;
+  --color-auburn:       #D06A52;
+  --color-auburn-light: #E07D66;
+  --shadow-sm:         0 2px 4px rgba(0,0,0,0.35);
+  --shadow-md:         0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg:         0 8px 32px rgba(0,0,0,0.6);
+  --shadow-card:       0 2px 12px rgba(0,0,0,0.4);
+  --shadow-card-hover: 0 16px 40px rgba(0,0,0,0.65);
+  --color-charcoal:    #E8E3D8;
+  --color-gray:        #9A928A;
+  --color-gray-light:  #756F68;
+}
+html[data-theme="dark"] .nav {
+  background: linear-gradient(135deg, #1D4B44 0%, #153832 100%) !important;
+}
+html[data-theme="dark"] .connect {
+  background: linear-gradient(135deg, #1D4B44 0%, #153832 100%) !important;
+}
+html[data-theme="dark"] .footer {
+  background: linear-gradient(135deg, #122D28 0%, #0E2420 100%) !important;
+}
+html[data-theme="dark"] .hero__title {
+  background: linear-gradient(135deg, #4A9A90 0%, #6AC0B5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+html[data-theme="dark"] .work-card,
+html[data-theme="dark"] .journal-card,
+html[data-theme="dark"] .toc__list,
+html[data-theme="dark"] .card {
+  border-color: rgba(255, 255, 255, 0.07);
+}
+html[data-theme="dark"] .chapter__header::after {
+  background-color: var(--color-cream);
+}
+html[data-theme="dark"] .chapter-nav-top {
+  background-color: var(--color-cream-dark);
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+html[data-theme="dark"] .chapter-nav__select {
+  background-color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--color-charcoal);
+}
+html[data-theme="dark"] .blog-entry {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+html[data-theme="dark"] .toc__item {
+  border-bottom-color: rgba(255, 255, 255, 0.07);
+}
+html[data-theme="dark"] .newsletter-form__input {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-charcoal);
+}
+html[data-theme="dark"] .newsletter-form__input::placeholder {
+  color: var(--color-gray-light);
 }

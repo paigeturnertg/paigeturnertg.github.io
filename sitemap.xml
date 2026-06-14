@@ -88,6 +88,11 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://paigeturnertg.github.io/blog/2026-06-13-rolling-now</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
   <!-- Work Indexes -->
   <url>
@@ -199,6 +204,11 @@
   </url>
   <url>
     <loc>https://paigeturnertg.github.io/works/forging-the-phis/chapter-6</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://paigeturnertg.github.io/works/forging-the-phis/chapter-7</loc>
     <priority>0.6</priority>
     <changefreq>yearly</changefreq>
   </url>

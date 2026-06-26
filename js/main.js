@@ -88,16 +88,112 @@
   // --------------------------------------------
   // Chapter Dropdown Navigation
   // --------------------------------------------
+  const STORY_CHAPTERS = {
+    'forging-the-phis': [
+      { value: 'prologue.html', label: 'Prologue' },
+      { value: 'chapter-1.html', label: 'Chapter 1: Greek Tragedy' },
+      { value: 'chapter-2.html', label: 'Chapter 2: Wasting Assets' },
+      { value: 'chapter-3.html', label: 'Chapter 3: Short Circuits' },
+      { value: 'chapter-4.html', label: 'Chapter 4: Taking Root' },
+      { value: 'chapter-5.html', label: 'Chapter 5: The Merritt System' },
+      { value: 'chapter-6.html', label: 'Chapter 6: Silent Treatment' },
+      { value: 'chapter-7.html', label: 'Chapter 7: Inside Voices' },
+      { value: 'chapter-8.html', label: 'Chapter 8: The Naked Truth' },
+      { value: 'chapter-9.html', label: 'Chapter 9: Small Appetites' },
+      { value: 'chapter-10.html', label: 'Chapter 10: Great Lengths' },
+    ],
+    'highway-to-elle': [
+      { value: 'chapter-1.html', label: 'Chapter 1: Tumbling Down' },
+      { value: 'chapter-2.html', label: 'Chapter 2: Cheer Pressure' },
+      { value: 'chapter-3.html', label: 'Chapter 3: Short Notice' },
+      { value: 'chapter-4.html', label: 'Chapter 4: One Elle of a Makeover' },
+      { value: 'chapter-5.html', label: 'Chapter 5: Sync or Swim' },
+      { value: 'chapter-6.html', label: 'Chapter 6: Roomie With a Hue' },
+      { value: 'chapter-7.html', label: 'Chapter 7: A Class Act' },
+      { value: 'chapter-8.html', label: 'Chapter 8: Diminishing Returns' },
+      { value: 'chapter-9.html', label: 'Chapter 9: High Maintenance' },
+      { value: 'chapter-10.html', label: 'Chapter 10: Lesson Plans' },
+      { value: 'chapter-11.html', label: 'Chapter 11: Altered State' },
+      { value: 'chapter-12.html', label: 'Chapter 12: Organic Chemistry' },
+      { value: 'chapter-13.html', label: 'Chapter 13: Freedom of Beach' },
+      { value: 'chapter-14.html', label: 'Chapter 14: Future Tense' },
+      { value: 'chapter-15.html', label: 'Chapter 15: Elle of the Ball' },
+      { value: 'chapter-16.html', label: 'Chapter 16: Commencement' },
+      { value: 'epilogue.html', label: 'Epilogue' },
+    ],
+    'yvonne-girl': [
+      { value: 'chapter-1.html', label: 'Chapter 1: Opposition Briefs' },
+      { value: 'chapter-2.html', label: 'Chapter 2: Evaning The Score' },
+      { value: 'chapter-3.html', label: 'Chapter 3: Cross, Dressing' },
+      { value: 'chapter-4.html', label: 'Chapter 4: Breaking Beau' },
+      { value: 'chapter-5.html', label: 'Chapter 5: Starved for Affection' },
+      { value: 'chapter-6.html', label: 'Chapter 6: Press Ganged' },
+      { value: 'chapter-7.html', label: 'Chapter 7: Body by Victoria' },
+      { value: 'chapter-8.html', label: 'Chapter 8: Message Penetration' },
+      { value: 'chapter-9.html', label: 'Chapter 9: Running Mates' },
+      { value: 'chapter-10.html', label: 'Chapter 10: Special Interests' },
+      { value: 'chapter-11.html', label: 'Chapter 11: Style and Substances' },
+      { value: 'chapter-12.html', label: 'Chapter 12: Photo Finish' },
+      { value: 'chapter-13.html', label: 'Chapter 13: Cold Case' },
+      { value: 'chapter-14.html', label: 'Chapter 14: A More Perfect Union' },
+      { value: 'chapter-15.html', label: 'Chapter 15: Term Limits' },
+      { value: 'epilogue.html', label: 'Epilogue and Author\'s Note' },
+    ],
+    'effortless-beauty': [
+      { value: 'chapter-1.html', label: 'Part One' },
+      { value: 'chapter-2.html', label: 'Part Two' },
+      { value: 'chapter-3.html', label: 'Part Three' },
+      { value: 'chapter-4.html', label: 'Part Four' },
+    ],
+    'tits-tates': [
+      { value: 'chapter-1.html', label: 'Episode 1: Distrust and Estates' },
+      { value: 'chapter-2.html', label: 'Episode 2: Nailed It!' },
+      { value: 'chapter-3.html', label: 'Episode 3: Contract Killers' },
+      { value: 'chapter-4.html', label: 'Episode 4: Twin Peaks' },
+      { value: 'chapter-5.html', label: 'Episode 5: Roast Mortem' },
+      { value: 'chapter-6.html', label: 'Episode 6: Sister Act' },
+      { value: 'chapter-7.html', label: 'Episode 7: Cougar Town' },
+      { value: 'chapter-8.html', label: 'Episode 8: Bottled Blonde' },
+    ],
+    'bffs': [
+      { value: 'chapter-1.html', label: 'Part One' },
+      { value: 'chapter-2.html', label: 'Part Two' },
+    ],
+    'hexed-holidays': [
+      { value: 'chapter-1.html', label: 'Part 1: Hex Lives of College Girls' },
+      { value: 'chapter-2.html', label: 'Part 2: Hex the Halls' },
+      { value: 'chapter-3.html', label: 'Part 3: Hexes and Woes' },
+    ],
+    'missing-xmas': [
+      { value: 'part-1.html', label: 'Part One' },
+      { value: 'part-2.html', label: 'Part Two' },
+      { value: 'part-3.html', label: 'Part Three' },
+      { value: 'part-4.html', label: 'Part Four' },
+    ],
+  };
+
   function initChapterNav() {
     const chapterSelect = document.querySelector('.chapter-nav__select');
-
     if (!chapterSelect) return;
 
+    const parts = window.location.pathname.split('/');
+    const storySlug = parts[parts.length - 2];
+    const currentFile = parts[parts.length - 1];
+
+    const chapters = STORY_CHAPTERS[storySlug];
+    if (chapters) {
+      chapterSelect.innerHTML = '<option value="">Jump to chapter...</option>';
+      chapters.forEach(function(ch) {
+        const opt = document.createElement('option');
+        opt.value = ch.value;
+        opt.textContent = ch.label;
+        if (ch.value === currentFile) opt.selected = true;
+        chapterSelect.appendChild(opt);
+      });
+    }
+
     chapterSelect.addEventListener('change', function() {
-      const url = this.value;
-      if (url) {
-        window.location.href = url;
-      }
+      if (this.value) window.location.href = this.value;
     });
   }
 

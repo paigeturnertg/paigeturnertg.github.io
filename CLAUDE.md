@@ -148,8 +148,9 @@ All JS is in a single IIFE with `'use strict'`. Features:
 
 1. Copy `templates/chapter.html` to `works/<story-slug>/chapter-N.html`
 2. Update `<title>`, meta description, chapter heading, and prev/next navigation links
-3. Update the chapter dropdown `<select>` options in all chapters of that story
+3. **Do NOT edit the `<option>` tags in other chapter files.** The chapter dropdown is driven dynamically by the `STORY_CHAPTERS` registry in `js/main.js`. Add the new chapter as one entry to the correct story's array there — that is the only file that needs updating for the dropdown.
 4. Update the story's `index.html` to link the new chapter
+5. Update the prev/next links in the preceding chapter to point to the new one
 
 ## CI/CD
 

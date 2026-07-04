@@ -98,6 +98,11 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://paigeturnertg.github.io/blog/2026-07-04-phireworks</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
   <!-- Work Indexes -->
   <url>

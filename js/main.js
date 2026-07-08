@@ -102,6 +102,7 @@
       { value: 'chapter-9.html', label: 'Chapter 9: Small Appetites' },
       { value: 'chapter-10.html', label: 'Chapter 10: Great Lengths' },
       { value: 'chapter-11.html', label: 'Chapter 11: Signs of Life' },
+      { value: 'chapter-12.html', label: 'Chapter 12: Going Under' },
     ],
     'highway-to-elle': [
       { value: 'chapter-1.html', label: 'Chapter 1: Tumbling Down' },

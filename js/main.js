@@ -104,6 +104,7 @@
       { value: 'chapter-11.html', label: 'Chapter 11: Signs of Life' },
       { value: 'chapter-12.html', label: 'Chapter 12: Going Under' },
       { value: 'chapter-13.html', label: 'Chapter 13: Resurfacing' },
+      { value: 'chapter-14.html', label: 'Chapter 14: Loose Lips' },
     ],
     'highway-to-elle': [
       { value: 'chapter-1.html', label: 'Chapter 1: Tumbling Down' },

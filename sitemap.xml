@@ -103,6 +103,11 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://paigeturnertg.github.io/blog/2026-08-30-me-myself-and-phis</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
   <!-- Work Indexes -->
   <url>
